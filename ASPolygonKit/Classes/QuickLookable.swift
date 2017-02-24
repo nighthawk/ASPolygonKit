@@ -1,43 +1,18 @@
-//
-//  QuickLookable.swift
-//  Pods
-//
-//  Created by Adrian Schoenig on 24/2/17.
-//
-//
-
 import Foundation
 
+#if os(iOS) || os(tvOS)
+  public typealias SGKImage = UIImage
+#elseif os(OSX)
+  import Cocoa
+  public typealias SGKImage = NSImage
+#endif
+  
 extension Polygon {
-
-  var minY: Double {
-    return points.reduce(Double.infinity) { acc, point in
-      return Double.minimum(acc, point.y)
-    }
-  }
-
-  var maxY: Double {
-    return points.reduce(Double.infinity * -1) { acc, point in
-      return Double.maximum(acc, point.y)
-    }
-  }
   
-  var minX: Double {
-    return points.reduce(Double.infinity) { acc, point in
-      return Double.minimum(acc, point.x)
-    }
-  }
-
-  var maxX: Double {
-    return points.reduce(Double.infinity * -1) { acc, point in
-      return Double.maximum(acc, point.x)
-    }
-  }
-  
-  var quickLookPath: CGPath {
+  public var quickLookPath: CGPath {
     
     let maxLength: CGFloat = 200
-    let factor = 200 / CGFloat(Double.maximum(maxX - minX, maxY - minY))
+    let factor = maxLength / CGFloat(Double.maximum(maxX - minX, maxY - minY))
     let offset = CGPoint(x: minX, y: minY) * factor
     
     let path = CGMutablePath()
@@ -53,54 +28,66 @@ extension Polygon {
     
   }
   
-  
-  var quickLookImage: UIImage? {
+  #if os(OSX)
+  public var bezierPath: NSBezierPath {
     
-    let path = quickLookPath
+    let maxLength: CGFloat = 200
+    let factor = maxLength / CGFloat(Double.maximum(maxX - minX, maxY - minY))
+    let offset = CGPoint(x: minX, y: minY) * factor
     
-    // We have to create our own context here for drawing so that we can use
-    // this within Xcode, too, not just on the device
-    let colorSpace = CGColorSpaceCreateDeviceRGB()
-    let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
-    guard let context = CGContext.init(
-      data: nil,
-      width: Int(path.boundingBox.size.width),
-      height: Int(path.boundingBox.size.height),
-      bitsPerComponent: 8,
-      bytesPerRow: 0,
-      space: colorSpace,
-      bitmapInfo: UInt32(bitmapInfo.rawValue)) else {
-        assertionFailure()
-        return nil
+    let path = NSBezierPath()
+    points.enumerated().forEach { index, point in
+      if index == 0 {
+        path.move(to: point.cgPoint * factor - offset)
+      } else {
+        path.line(to: point.cgPoint * factor - offset)
+      }
     }
-    UIGraphicsPushContext(context)
-
-    UIGraphicsBeginImageContext(path.boundingBox.size)
-
-    context.setFillColor(UIColor.red.cgColor)
-    context.fill(path.boundingBox)
-    
-    context.setLineWidth(2)
-    context.setStrokeColor(UIColor.green.cgColor)
-    context.setFillColor(gray: 0, alpha: 0.5)
-    context.addPath(path)
-//    context.drawPath(using: .stroke)
-    context.strokePath()
-    context.fillPath()
-    
-    let image = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return image
+    path.close()
+    return path
     
   }
+  
+  
+  var quickLookImage: NSImage? {
+    
+    let path = bezierPath
+    return NSImage(size: path.bounds.size, flipped: false) { rect in
+      
+      let strokeColor = NSColor.green
+      strokeColor.setStroke()
+      
+      path.stroke()
+      
+      return true
+    }
+  }
+  
   
   public var debugQuickLookObject: Any {
     
-    return quickLookImage ?? description
+    return quickLookImage ?? description!
     
+  }
+
+  #endif
+  
+}
+
+#if os(OSX)
+extension Polygon: CustomPlaygroundQuickLookable {
+  
+  public var customPlaygroundQuickLook: PlaygroundQuickLook {
+    if let image = quickLookImage {
+      return .image(image)
+    } else {
+      return .text(description!)
+    }
   }
   
 }
+#endif
+
 
 func *(lhs: CGPoint, rhs: CGFloat) -> CGPoint {
   return CGPoint(x: lhs.x * rhs, y: lhs.y * rhs)
@@ -110,7 +97,6 @@ func -(lhs: CGPoint, rhs: CGPoint) -> CGPoint {
   return CGPoint(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
 }
 
-
 extension Point {
   
   var cgPoint: CGPoint {
@@ -118,3 +104,5 @@ extension Point {
   }
   
 }
+
+

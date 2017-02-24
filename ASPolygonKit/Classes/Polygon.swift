@@ -9,6 +9,15 @@ import Foundation
 
 import MapKit
 
+enum PolygonUnionError: Error {
+  
+  case noIntersections
+  case polygonTooComplex
+  case polygonIsSubset
+  case invalidPolygon
+  
+}
+
 public struct Polygon {
   var points: [Point] {
     didSet {
@@ -18,24 +27,54 @@ public struct Polygon {
   
   fileprivate var firstLink: LinkedLine
   
-  init(pairs: [(Double, Double)]) {
+  public init(pairs: [(Double, Double)]) {
     points = pairs.map { pair in
       Point(ll: pair)
     }
     firstLink = Polygon.firstLink(forPoints: points)
   }
   
-  var description: String? {
+  // MARK: Basic info
+  
+  public var description: String? {
     return points.reduce("[ ") { previous, point in
       let start = previous.utf8.count == 2 ? previous : previous + ", "
       return start + point.description
-    } + " ]"
+      } + " ]"
+  }
+  
+  public var minY: Double {
+    return points.reduce(Double.infinity) { acc, point in
+      return Double.minimum(acc, point.y)
+    }
+  }
+  
+  public var maxY: Double {
+    return points.reduce(Double.infinity * -1) { acc, point in
+      return Double.maximum(acc, point.y)
+    }
+  }
+  
+  public var minX: Double {
+    return points.reduce(Double.infinity) { acc, point in
+      return Double.minimum(acc, point.x)
+    }
+  }
+  
+  public var maxX: Double {
+    return points.reduce(Double.infinity * -1) { acc, point in
+      return Double.maximum(acc, point.x)
+    }
+  }
+  
+  public var boundingRect: CGRect {
+    return CGRect(x: minX, y: minY, width: maxX - minX, height: maxY - minY)
   }
   
   
   // MARK: MapKit / CoreLocation
   
-  init(_ polygon: MKPolygon) {
+  public init(_ polygon: MKPolygon) {
     let count = polygon.pointCount
     var coordinates = [CLLocationCoordinate2D](repeating: kCLLocationCoordinate2DInvalid, count: count)
     let range = NSRange(location: 0, length: count)
@@ -74,6 +113,11 @@ public struct Polygon {
   }
   
   // MARK: Polygon to polygon intersections
+  
+  public func intersects(_ polygon: Polygon) -> Bool {
+    return intersections(polygon).count > 0
+  }
+  
   func intersections(_ polygon: Polygon) -> [Intersection] {
     var intersections : [Intersection] = []
     for link in firstLink {
@@ -125,119 +169,149 @@ public struct Polygon {
   
   // MARK: Union
   
-  mutating func union(_ polygon: Polygon) {
+  public mutating func union(_ polygon: Polygon) throws {
     let intersections = self.intersections(polygon)
     if intersections.count == 0 {
-      return
+      throw PolygonUnionError.noIntersections
     }
     
-    let _ = union(polygon, with: intersections)
+    try union(polygon, with: intersections)
   }
   
-  mutating func union(_ polygon: Polygon, with intersections: [Intersection]) -> Bool {
+  mutating func union(_ polygon: Polygon, with intersections: [Intersection]) throws {
+    if polygon.points.count < 3 || points.count < 3 {
+      throw PolygonUnionError.invalidPolygon
+    }
     if intersections.count == 0 {
-      return false
+      throw PolygonUnionError.noIntersections
     }
     
-    if true {
-      let path = quickLookPath
-      let image = quickLookImage
-      print("\(path) - \(image)")
-    }
+    var startLink: LinkedLine = firstLink
     
-    var link: LinkedLine = firstLink
-    
-    // We need to start outside the other polygon
-    while polygon.contains(link.line.start, onLine: true) {
-      if let next = link.next {
-        link = next
+    // We need to start with a link that starts outside the polygon
+    // that we are trying to add.
+    while polygon.contains(startLink.line.start, onLine: true) {
+      if let next = startLink.next {
+        startLink = next
       } else {
         break
       }
     }
+    if polygon.contains(startLink.line.start, onLine: true) {
+      throw PolygonUnionError.polygonIsSubset
+    }
     
-    let start = link.line.start
-    var onMine = true
+    
+    let startPoint = startLink.line.start
+    var current = (point: startLink.line.start, link: startLink, onMine: true)
+
+    var remainingIntersections = intersections
     var newPoints: [Point] = []
     
     repeat {
-      Polygon.append(link.line.start, toPoints: &newPoints)
+      Polygon.append(current.point, to: &newPoints)
       
       if newPoints.count - points.count > polygon.points.count * 2 {
         NSLog("Could not merge \(polygon.description!) into \(self.description!)")
-        return false
+        throw PolygonUnionError.polygonTooComplex
       }
       
-      var lineIntersections: [(Intersection, Bool)] = []
-      for intersection in intersections {
-        if intersection.myLink == link || intersection.yourLink == link {
-          
-          // The two lines intersection. For this intersection we want to continue on the one which has a smaller clock wise angle.
-          // We compare your angle `line.start - point - other.line.end` to mine `line.start - point - line.end`. It is possible that `point == other.line.end` in that case, we take the angle to `other.next.line.end`. Same thing with `point == line.end` in which case we compare to the angle to `line.next.end`
-          
-          let point = intersection.point
-          let yourLink = intersection.yourLink
-          let myLink = intersection.myLink
-          
-          var yourEnd: Point
-          if point == yourLink.line.end {
-            if let next = yourLink.next {
-              yourEnd = next.line.end
-            } else {
-              yourEnd = polygon.firstLink.line.end
-            }
-          } else {
-            yourEnd = yourLink.line.end
-          }
-          
-          var myEnd: Point
-          if point == myLink.line.end {
-            if let next = myLink.next {
-              myEnd = next.line.end
-            } else {
-              myEnd = firstLink.line.end
-            }
-          } else {
-            myEnd = myLink.line.end
-          }
-          
-          let yourAngle = angle(start: link.line.start, middle: point, end: yourEnd)
-          let myAngle = angle(start: link.line.start, middle: point, end: myEnd)
-          var continueOnMine = true // can be 'let = continueOnMine : Bool' in Swift 1.2
-          if myAngle < yourAngle {
-            continueOnMine = true
-          } else if (yourAngle < myAngle) {
-            continueOnMine = false
-          } else {
-            let myDistance = point.distance(from: myEnd)
-            let yourDistance = point.distance(from: yourEnd)
-            continueOnMine = myDistance > yourDistance
-          }
-          let candidate = (intersection, continueOnMine)
-          lineIntersections.append(candidate as (Intersection, Bool))
-        }
-      }
+      let candidates = Polygon.potentialIntersections(
+        in: remainingIntersections,
+        startingAt: current.point,
+        on: current.link,
+        polygonStart: (mine: firstLink, yours: polygon.firstLink)
+      )
+
+      if let (index, closest, newOnMine) = closestIntersection(candidates, to: current.point) {
+        remainingIntersections.remove(at: index)
+        current = (point: closest.point, link: newOnMine ? closest.myLink : closest.yourLink, onMine: newOnMine)
       
-      if let (closest, newOnMine) = closestIntersection(lineIntersections, to: link.line.start) {
-        Polygon.append(closest.point, toPoints: &newPoints)
-        onMine = newOnMine
-        link = onMine ? closest.myLink : closest.yourLink
-      }
-      
-      // the linked lines do not wrap around themselves, so we do that here manually
-      if let next = link.next {
-        link = next
       } else {
-        link = onMine ? firstLink : polygon.firstLink
+
+        // the linked lines do not wrap around themselves, so we do that here manually
+        let next: LinkedLine
+        if let nextInPoly = current.link.next {
+          next = nextInPoly
+        } else if current.onMine {
+          next = firstLink
+        } else {
+          next = polygon.firstLink
+        }
+        current = (point: next.line.start, link: next, onMine: current.onMine)
       }
-    } while link.line.start != start
-    
+      
+    } while current.point != startPoint
     
     points = newPoints
-    return true
   }
   
-  fileprivate static func append(_ point: Point, toPoints points: inout [Point]) {
+  
+  fileprivate static func potentialIntersections(
+    in intersections: [Intersection],
+    startingAt start: Point,
+    on link: LinkedLine,
+    polygonStart: (mine: LinkedLine, yours: LinkedLine)
+  ) -> [(Int, Intersection, Bool)] {
+    
+    var lineIntersections: [(Int, Intersection, Bool)] = []
+    for (index, intersection) in intersections.enumerated() {
+      // The intersection applies if it's for the same link AND if the intersection's point is on that link between `start` and the intersection's end, i.e., we can't go back if `start` is already further along the link than the intersections' point.
+      guard intersection.appliesTo(link, start: start) else { continue }
+      
+      // The two lines intersection. For this intersection we want to continue on the one which has a smaller clock wise angle.
+      // We compare your angle `line.start - point - other.line.end` to mine `line.start - point - line.end`.
+      // It is possible that `point == other.line.end` in that case, we take the angle to `other.next.line.end`. Same thing with `point == line.end` in which case we compare to the angle to `line.next.end`
+      
+      let point = intersection.point
+      let yourLink = intersection.yourLink
+      let myLink = intersection.myLink
+      
+      let yourEnd: Point
+      if point == yourLink.line.end {
+        if let next = yourLink.next {
+          yourEnd = next.line.end
+        } else {
+          yourEnd = polygonStart.yours.line.end
+        }
+      } else {
+        yourEnd = yourLink.line.end
+      }
+      
+      let myEnd: Point
+      if point == myLink.line.end {
+        if let next = myLink.next {
+          myEnd = next.line.end
+        } else {
+          myEnd = polygonStart.mine.line.end
+        }
+      } else {
+        myEnd = myLink.line.end
+      }
+      
+      let yourAngle = angle(start: start, middle: point, end: yourEnd)
+      let myAngle = angle(start: start, middle: point, end: myEnd)
+      let continueOnMine: Bool
+      
+      if myAngle < yourAngle {
+        continueOnMine = true
+      } else if (yourAngle < myAngle) {
+        continueOnMine = false
+      } else {
+        let myDistance = point.distance(from: myEnd)
+        let yourDistance = point.distance(from: yourEnd)
+        continueOnMine = myDistance > yourDistance
+      }
+      let candidate = (index, intersection, continueOnMine)
+      lineIntersections.append(candidate)
+    }
+    
+    return lineIntersections
+    
+  }
+  
+
+  fileprivate static func append(_ point: Point, to points: inout [Point]) {
     // 1) if we don't have a last point, just append it
     // 2) if we have a previous point and this is the same, skip it
     // 3) if we have two previous points and this is on the same line then remove the previous point and insert this one
@@ -294,20 +368,30 @@ public struct Intersection {
   let point: Point
   fileprivate let myLink: LinkedLine
   fileprivate let yourLink: LinkedLine
+  
+  fileprivate func appliesTo(_ link: LinkedLine, start: Point) -> Bool {
+    guard myLink == link || yourLink == link else { return false }
+    
+    let linkStart = link.line.start
+    let toPoint = point.distance(from: linkStart)
+    let toStart = start.distance(from: linkStart)
+    return toStart <= toPoint
+  }
+  
 }
 
 // For this exercise we assume that one polygon is never part of another, so we only need to deal with two cases: There's an overlap or there's none. Note, that if there's an overlap, we should have at least two intersection points.
 // What do we do with the intersections?
 // For each line that intersects we need to deal with the case that it has multiple intersections. Typically we are only concerned about the closest then.
 
-private func closestIntersection(_ intersections: [(Intersection, Bool)], to point: Point) -> (Intersection, Bool)? {
+private func closestIntersection(_ intersections: [(Int, Intersection, Bool)], to point: Point) -> (Int, Intersection, Bool)? {
   if (intersections.count <= 1) {
     return intersections.first
   } else {
     // the closest is the one with the least distance from the points to the intersection
     return intersections.reduce(nil) {
       prior, entry in
-      if prior == nil || entry.0.point.distance(from: point) < prior!.0.point.distance(from: point) {
+      if prior == nil || entry.1.point.distance(from: point) < prior!.1.point.distance(from: point) {
         return entry
       } else {
         return prior

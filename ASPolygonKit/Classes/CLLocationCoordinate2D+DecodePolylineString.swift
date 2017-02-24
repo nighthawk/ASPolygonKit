@@ -1,6 +1,5 @@
 //
 //  CLLocationCoordinate2D+DecodePolylineString.swift
-//  Pods
 //
 //  Created by Adrian Schoenig on 18/2/17.
 //

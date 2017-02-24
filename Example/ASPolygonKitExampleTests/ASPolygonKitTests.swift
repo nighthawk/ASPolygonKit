@@ -9,22 +9,12 @@
 import XCTest
 
 import MapKit
-import ASPolygonKit
 
+@testable import ASPolygonKit
 @testable import ASPolygonKitExample
 
 class ASPolygonKitTests: XCTestCase {
     
-  override func setUp() {
-    super.setUp()
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-  }
-  
-  override func tearDown() {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    super.tearDown()
-  }
-  
   func testAll() {
     
     let polygons = polygonsFromJSON(named: "polygons-tripgo-170217")
@@ -72,6 +62,21 @@ class ASPolygonKitTests: XCTestCase {
     }
     
   }
+  
+  func testOCFailure() {
+    
+    var grower = Polygon(pairs: [ (4,0), (4,3), (1,3), (1,0) ])
+
+    let newAdder = Polygon(pairs: [ (5,1), (5,4), (3,4), (3,2), (2,2), (2,4), (0,4), (0,1) ])
+    
+    do {
+      try grower.union(newAdder)
+      XCTAssertEqual(12, grower.points.count)
+    } catch {
+      XCTFail("Union failed")
+    }
+  }
+  
   
   
   

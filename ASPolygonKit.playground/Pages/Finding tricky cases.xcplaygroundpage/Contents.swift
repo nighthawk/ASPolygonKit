@@ -47,5 +47,5 @@ print(grower.description!)
 print(fifth.description!)
 
 
-//try! grower.union(fifth)
+try! grower.union(fifth)
 grower

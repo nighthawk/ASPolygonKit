@@ -26,14 +26,14 @@ extension MKPolygon {
     let sorted = polygons.sorted(by: { first, second in
       return first.boundingMapRect.distanceFromOrigin < second.boundingMapRect.distanceFromOrigin
     })
-
+    
     return sorted.reduce([]) { polygons, polygon in
       return union(polygons, with: polygon)
     }
     
-//    return polygons.reduce([]) { polygons, polygon in
-//      return union(polygons, with: polygon)
-//    }
+    //    return polygons.reduce([]) { polygons, polygon in
+    //      return union(polygons, with: polygon)
+    //    }
     
   }
   
@@ -50,8 +50,9 @@ extension MKPolygon {
       }
       let intersections = grower.intersections(existingStruct)
       if intersections.count > 0 {
-        let success = grower.union(existingStruct, with: intersections)
-        if !success {
+        do {
+          try grower.union(existingStruct, with: intersections)
+        } catch {
           newArray.append(existing)
         }
       } else {
@@ -77,7 +78,7 @@ extension MKPolygon {
 
 extension MKMapRect {
   
-  fileprivate var distanceFromOrigin: Double {
+  public var distanceFromOrigin: Double {
     return sqrt( origin.x * origin.x + origin.y * origin.y )
   }
   

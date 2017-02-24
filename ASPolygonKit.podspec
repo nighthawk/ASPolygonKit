@@ -1,34 +1,21 @@
-#
-# Be sure to run `pod lib lint ASPolygonKit.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
 
 Pod::Spec.new do |s|
   s.name             = 'ASPolygonKit'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of ASPolygonKit.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.summary          = 'A little Swift toolkit for working with polygons'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  A small collection of classes, primarily used for handling creating a union of polygons. The resulting polygons are compatible with MapKit. Be warned, it doesn't work for all kinds of polygons.
                        DESC
 
-  s.homepage         = 'https://github.com/adrian.schoenig@gmail.com/ASPolygonKit'
+  s.homepage         = 'https://github.com/nighthawk/ASPolygonKit'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'adrian.schoenig@gmail.com' => 'adrian.schoenig@gmail.com' }
-  s.source           = { :git => 'https://github.com/adrian.schoenig@gmail.com/ASPolygonKit.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'nighthawk' => 'adrian.schoenig@gmail.com' }
+  s.source           = { :git => 'https://github.com/nighthawk/ASPolygonKit.git', :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/nhawk'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'ASPolygonKit/Classes/**/*'
   
@@ -37,6 +24,6 @@ TODO: Add long description of the pod here.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

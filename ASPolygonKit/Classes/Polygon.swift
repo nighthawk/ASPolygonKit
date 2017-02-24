@@ -223,7 +223,7 @@ public struct Polygon {
         polygonStart: (mine: firstLink, yours: polygon.firstLink)
       )
 
-      if let (index, closest, newOnMine) = closestIntersection(candidates, to: current.point) {
+      if let (index, closest, newOnMine) = closestIntersection(candidates, to: current.point), newOnMine != current.onMine {
         remainingIntersections.remove(at: index)
         current = (point: closest.point, link: newOnMine ? closest.myLink : closest.yourLink, onMine: newOnMine)
       

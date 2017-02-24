@@ -1,3 +1,10 @@
+//
+//  QuickLookable.swift
+//
+//  Created by Adrian Schoenig on 24/2/17.
+//
+//
+
 import Foundation
 
 #if os(iOS) || os(tvOS)

@@ -1,3 +1,10 @@
+//
+//  Geometry.swift.swift
+//
+//  Created by Adrian Schoenig on 18/2/17.
+//
+//
+
 import Foundation
 
 import MapKit

@@ -1,5 +1,5 @@
 PODS:
-  - ASPolygonKit (0.1.0)
+  - ASPolygonKit (0.1.2)
 
 DEPENDENCIES:
   - ASPolygonKit (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ASPolygonKit: 1e863e64428e51aef38523d7ea425bd441f1b54d
+  ASPolygonKit: ba05a8f1976ab49c486cf2afb7de0f9a4fe3b4ae
 
 PODFILE CHECKSUM: 06b7918cb9c198daa34d8cf0855c8e207a24c861
 

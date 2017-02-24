@@ -2,6 +2,7 @@
 <playground version='6.0' target-platform='macos' display-mode='raw'>
     <pages>
         <page name='Finding tricky cases'/>
+        <page name='Debugging CH failure'/>
         <page name='Debugging failures'/>
     </pages>
 </playground>

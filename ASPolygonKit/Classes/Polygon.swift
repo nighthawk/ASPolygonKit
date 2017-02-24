@@ -243,6 +243,7 @@ public struct Polygon {
       
     } while current.point != startPoint
     
+    assert(newPoints.count > 2, "Should never end up with a line (or less) after merging")
     points = newPoints
   }
   

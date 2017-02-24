@@ -105,8 +105,12 @@ public struct Line {
   //MARK: Contains check
   
   public func contains(_ point: Point) -> Bool {
-    let y = m * point.x + b
+    if m == Double.infinity {
+      return inRange( (point.x, point.y) )
+    }
+    
     let epsilon = 0.0001
+    let y = m * point.x + b
     if Double.abs(y - point.y) < epsilon {
       return inRange( (point.x, point.y) )
     } else {
@@ -120,7 +124,7 @@ public struct Line {
     let x = xy.0
     let y = xy.1
     return x.inBetween(start.x, and: end.x)
-      && y.inBetween(start.y, and: end.y)
+        && y.inBetween(start.y, and: end.y)
   }
   
   public func intersection(with line: Line) -> Point? {

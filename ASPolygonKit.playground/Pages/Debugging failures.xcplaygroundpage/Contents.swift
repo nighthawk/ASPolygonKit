@@ -2,55 +2,13 @@
 
 import Foundation
 
-var grower = Polygon(pairs: [ (47.6,5.8), (47.24,9.8), (47.2,7.8), (46.8,7.8), (47.1,9.7), (46.2,10.5), (45.9,5.7), (46.6,5.7) ])
+var grower = Polygon(pairs: [ (55.7000,12.8600), (57.0200,11.8000), (57.0200,18.7500), (56.2200,17.1200), (55.4500,15.5500), (55.2000,12.7100) ])
 
-let adder = Polygon(pairs: [ (47.2,7.7), (47.3,9.7), (47.0,9.7), (46.7,7.7) ])
+let adder = Polygon(pairs: [ (59.4800,20.0940), (58.1649,20.0940), (58.1649,19.6944), (56.9168,19.6436), (56.9168,11.4587), (58.1512,11.2173), (58.1500,10.9000), (58.9103,10.9012), (58.9305,10.9294), (58.8592,9.9206), (58.7552,9.3657), (57.9528,9.2889), (57.8856,4.4055), (59.9605,4.4385), (60.8984,4.1271), (60.8984,4.1260), (60.8997,4.1267), (60.9203,4.1199), (60.9203,4.1368), (62.2142,4.7736), (63.1227,6.3322), (63.1189,6.3590), (68.3232,13.0270), (68.3201,13.0464), (71.5493,22.1155), (70.9178,31.9345), (69.5057,30.9979), (68.9620,29.0829), (67.6719,30.2344), (62.9900,32.0800), (61.7200,30.1900), (61.8947,29.7407), (61.7600,29.3500), (61.5900,29.2100), (61.7200,28.8300), (61.3500,27.8100), (61.4100,27.3600), (61.1600,27.4700), (61.2600,27.0400), (61.2100,26.6900), (61.6800,25.6500), (61.5100,25.5300), (61.3400,25.2300), (61.2400,24.5500), (60.8200,24.1500), (60.7000,23.5900), (60.3600,24.0000), (60.0100,23.6000), (60.0500,23.2100), (60.0000,22.8200), (59.7400,22.6900), (59.7763,19.7145) ])
 
 do {
   try grower.union(adder)
   grower
 } catch {
-  
   print(":(")
 }
-
-//: ---
-//: ### Let's explore what's going on here
-//:
-//: Basic assumption is that we have intersections:
-
-grower.intersects(adder)
-
-//: Now that is confirmed. Does it work the other way around?
-
-do {
-  var newGrower = adder
-  try newGrower.union(grower)
-  newGrower
-  
-} catch {
-  print(":(")
-}
-
-//: Oh, gosh, that worked but the result is even worse!
-//: As of the time of this writing, this is succeeding but it's resulting in a polygon that only has two additional points and is missing most of the `newAdder` polygon!
-//: Let's try to simplify this a bit:
-
-grower = Polygon(pairs: [ (4,0), (4,3), (1,3), (1,0) ])
-
-var newAdder = Polygon(pairs: [ (5,1), (5,4), (3,4), (3,2), (2,2), (2,4), (0,4), (0,1) ])
-
-try! grower.union(newAdder)
-grower
-
-//:
-//: Ok, so now we have two issues:
-//:
-//: 1. Union crashing with an error, likely due to the new polygon being an inner polygon.
-//: 2. Union isn't creating the full polygon
-//:
-//: Arguable 2 is more significant than 1.
-//:
-//: ---
-
-//: [Next](@next)

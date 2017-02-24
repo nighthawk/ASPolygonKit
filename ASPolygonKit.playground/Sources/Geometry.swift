@@ -56,7 +56,7 @@ public func ==(lhs: Point, rhs: Point) -> Bool {
 public struct Line {
   public let start: Point
   public let end: Point
-
+  
   // Inferred from start + end
   let m: Double
   let b: Double
@@ -105,8 +105,13 @@ public struct Line {
   //MARK: Contains check
   
   public func contains(_ point: Point) -> Bool {
-    let y = m * point.x + b
     let epsilon = 0.0001
+    
+    if m == Double.infinity {
+      return inRange( (point.x, point.y) )
+    }
+    
+    let y = m * point.x + b
     if Double.abs(y - point.y) < epsilon {
       return inRange( (point.x, point.y) )
     } else {

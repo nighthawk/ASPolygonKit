@@ -67,10 +67,10 @@ class ASPolygonKitTests: XCTestCase {
     
     var grower = Polygon(pairs: [ (4,0), (4,3), (1,3), (1,0) ])
 
-    let newAdder = Polygon(pairs: [ (5,1), (5,4), (3,4), (3,2), (2,2), (2,4), (0,4), (0,1) ])
+    let addition = Polygon(pairs: [ (5,1), (5,4), (3,4), (3,2), (2,2), (2,4), (0,4), (0,1) ])
     
     do {
-      try grower.union(newAdder)
+      try grower.union(addition)
       XCTAssertEqual(12, grower.points.count)
     } catch {
       XCTFail("Union failed")
@@ -78,6 +78,28 @@ class ASPolygonKitTests: XCTestCase {
   }
   
   
+  func testSinglePointFailure() {
+    
+    var grower = Polygon(pairs: [ (53.5,-7.77), (52.15,-6.25), (51.2,-10) ])
+    
+    let addition = Polygon(pairs: [ (53.4600,-7.77), (54,-10), (55,-7.77) ])
+    
+    do {
+      try grower.union(addition)
+      XCTAssert(grower.points.count > 1)
+    } catch {
+      XCTFail("Union failed")
+    }
+  }
+  
+  func testPolygonContains() {
+
+    let addition = Polygon(pairs: [ (53.4600,-7.77), (54,-10), (55,-7.77) ])
+    
+    XCTAssert( addition.contains(Point(ll: (53.5,-7.77)), onLine: true))
+    XCTAssert(!addition.contains(Point(ll: (53.5,-7.77)), onLine: false))
+    
+  }
   
   
   func testPerformanceExample() {

@@ -3,14 +3,23 @@
 import Cocoa
 import MapKit
 
-var str = "Hello, playground"
-
-let swissEncoded = [
-  "{xk_H{icn@ymE}hbKvr}@taB`xu@|h_K",
-  "kvb|G{xal@cecAg~cMjVoheDb{xCucAjqlBtpmHo`^`zyBtrAlvzAtmLfhgB",
-  "ynvuG{iul@{iv@htlIu{sChhC?s}pI",
-  "wwdaHu}yh@eiXoy{Dp{mE??|krK",
-  "wttaHegcn@qyl@snlDj~cAoquE|kr@~[nlD~cbK"
+let encoded = [
+  "gcqlJqbgv@fe}E}c|@f`|Cr_NlbLlxx\\{ftK_mE",
+  "s}opJapiqBzwnEkaiG`z_G??h`c_@}roM?",
+  "s}opJcbczA|roM?d|AberW_osCkFiq`@a}m@mrGmvl@vdi@{f^gfb@g`h@wu_@ybHicgAxl[owMakt@ayZ|sSikKgk^|K}yh@i`x@_`~@srW`bD}vi@goK",
+  "uzrbJqjfwBrhfGjvI?`r}p@shfG|nr@",
+  "ogbiKabzqAwkpCex}CsuaDs_No~[y{|Dite@~hRge{BeldEae_ArdkAwphCmteFpxRq~qCwfnBgnc@lk^sdtI{rvB}d_@ugFqjkBvieEyyfR|veM{zrBny_HhpuC?`u_y@",
+  "_~rkJoyfiC_uu@_mVotLoaoAnzD_`qA_{m@ovs@_}tAnu~AokXoqmC_xq@oqPoh\\_ry@o|k@_xnD_~i@oyo@nxzAo~oE_yFop{@nqPojcA_xq@n_h@ozDoe`@~oR_ieAoggAou{EnkX_ieA_jZ_vJoqP_uu@_mVojcAn|k@_ieA~lpG~zdL~yxA~olG",
+  "_fopJoeiqBocmN_ycCopxD_dvO_pRo}zF~s`BocvBnwHohyCnu~A_~fD~`f@onqC~f^__yFnnT_o}@nzD_vdGnsw@_yF~`f@_g^nkX_laA~`f@~gpBne`@~iZokX~eiAnggA~efE_vJn{vAnyo@onT_pRn~rAnwHnjcAoxzA~bjEne`@~lVne`@~qy@~oR~xcC~_qA~bmA~lV~jlB~kaAoaoAnjcA~bmA_yFndkAnwHndkA~wq@nkX_yF~r_S",
+  "ak_`L}ionAhjoBcxeUf`i@j_d@faOx}q@zmm@kmj@ll_@vbHx~gBthfDjo~@|vAndKd|{CbabDdoQngiCvxwDpdR{dxAnlw@y`Flyc@b`e@{rIzk`Db`zAhdqDfedGiuOqecDtqqc@",
+  "igpsJuyfiAyvD{luAuao@_se@aqnApihCudiByl[mwbAjqh@wejB??o{|l@bkqO?pOtv}i@",
+  "q|plJe~dv@}oEqccDwpaEehN_Wo`sMdbw@c|_Ab_`BxpNhst@ftcAbzCntm@l~\\ka@djPrwg@pkbAmnMx{hAl_d@ft@rlq@exc@rtW~qWllgAhcM~agEdqSnvlB",
+  "_|}rI_vnmAodkA~wq@ndkA_xq@_y`G~_nE?olli@~f{Cnj}HnkuCnsqHnyo@~tiP",
+  "opioK_`brC_ycC~dtBoinB_ieA_ieA~|tAovs@nqPoofBotL_qdB~bgIszkBby}Fioi@alsBwiGsooB`hlBmmtDxyK{o|Bam^eumC`ze@csgEwgp@s}gAbiAqh~@yjTirV_nh@lgJyytAc}b@cxu@eomBuz^k|rHrnjAckaF`vp@wvn@zypAzmoAz`nG}|pF|lq[cngJn`wFncpJo_h@~mhBoljB~pdBnwH~yuE_xq@~c_DokXn{sEobd@~~{B_`qA~~{B_g^n_eD_g^n{vAoe`@?owH~``H",
+  "{yn|K{dtdBopnB`daUoavR{kkv@zizB}w|z@lxrGr|uD~eqBpiqKqtl@ftcAslkA{llBoqhAlaiG`h`@jooGdoiDfzcBdmkAb~}Dsu`@x}rNehsApihCtv]x~lElj_Ctwg@kf`@hsiJlfbBdomBk|YfdwB",
+  "snyrJctcX?}rub@r`cEhoFn~DbbkDuqMbxc[",
+  "}eurJyzdXy~_G{m}BempDyloHlgfDazpc@x~iBfb\\vpYqdkAp`h@i{fAp`{@ria@~hZ~flA",
+  "oadaK{`}gAgy~@ahd@osmAizxA{vYgwsAjpIyxlDcx|@ocW?ezxx@bgdG~puU?nrgn@"
 ]
 
 extension MKPolygon {
@@ -22,30 +31,25 @@ extension MKPolygon {
   
 }
 
-var swiss = swissEncoded.map { MKPolygon(encoded: $0) }
-swiss.sort {
+var polygons = encoded.map { MKPolygon(encoded: $0) }
+polygons.sort {
   return $0.0.boundingMapRect.distanceFromOrigin < $0.1.boundingMapRect.distanceFromOrigin
 }
 
-var grower = Polygon(swiss[0])
+var grower = Polygon(polygons[0])
 
-let second = Polygon(swiss[1])
-try! grower.union(second)
+for i in 1...15 {
+  let addition = Polygon(polygons[i])
+  do {
+    try grower.union(addition)
+  } catch {
+    print(error)
+  }
+}
+
 grower
 
-let third = Polygon(swiss[2])
-try! grower.union(third)
-grower
+//let addition = Polygon(polygons[16])
+//try! grower.union(addition)
+//grower
 
-let forth = Polygon(swiss[3])
-try! grower.union(forth)
-grower
-
-let fifth = Polygon(swiss[4])
-
-print(grower.description!)
-print(fifth.description!)
-
-
-try! grower.union(fifth)
-grower

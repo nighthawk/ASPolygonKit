@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3AE5EA891E5864E50084632F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5EA881E5864E50084632F /* AppDelegate.swift */; };
+		3AE5EA8B1E5864E50084632F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5EA8A1E5864E50084632F /* ViewController.swift */; };
+		3AE5EA8E1E5864E50084632F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5EA8C1E5864E50084632F /* Main.storyboard */; };
+		3AE5EA901E5864E50084632F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5EA8F1E5864E50084632F /* Assets.xcassets */; };
+		3AE5EA931E5864E50084632F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5EA911E5864E50084632F /* LaunchScreen.storyboard */; };
+		3AE5EA9E1E5864E50084632F /* ASPolygonKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5EA9D1E5864E50084632F /* ASPolygonKitTests.swift */; };
+		3AE5EAAF1E5869810084632F /* polygons-tripgo-170217.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5EAAD1E5869810084632F /* polygons-tripgo-170217.json */; };
+		3AE5EAB01E5869810084632F /* polygons-uk-170217.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5EAAE1E5869810084632F /* polygons-uk-170217.json */; };
+		3AE5EAB41E5877320084632F /* polygons-scandinavia-170217.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5EAB31E5877320084632F /* polygons-scandinavia-170217.json */; };
+		3AE5EAB81E60353B0084632F /* polygons-ch-170224.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5EAB71E60353B0084632F /* polygons-ch-170224.json */; };
+		B3CF5D9BFC2EEAA746C036E8 /* Pods_ASPolygonKitExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170AFE52702E1F6A222D2056 /* Pods_ASPolygonKitExampleTests.framework */; };
+		DB0D891E88C7B304285962B4 /* Pods_ASPolygonKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68237AEF3269549FBF978D04 /* Pods_ASPolygonKitExample.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3AE5EA9A1E5864E50084632F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AE5EA7D1E5864E50084632F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AE5EA841E5864E50084632F;
+			remoteInfo = ASPolygonKitExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1452783154372C249BF5E589 /* Pods-ASPolygonKitExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ASPolygonKitExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ASPolygonKitExampleTests/Pods-ASPolygonKitExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		170AFE52702E1F6A222D2056 /* Pods_ASPolygonKitExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ASPolygonKitExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AE5EA851E5864E50084632F /* ASPolygonKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ASPolygonKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AE5EA881E5864E50084632F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3AE5EA8A1E5864E50084632F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3AE5EA8D1E5864E50084632F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3AE5EA8F1E5864E50084632F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3AE5EA921E5864E50084632F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3AE5EA941E5864E50084632F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AE5EA991E5864E50084632F /* ASPolygonKitExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ASPolygonKitExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AE5EA9D1E5864E50084632F /* ASPolygonKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASPolygonKitTests.swift; sourceTree = "<group>"; };
+		3AE5EA9F1E5864E50084632F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AE5EAAD1E5869810084632F /* polygons-tripgo-170217.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "polygons-tripgo-170217.json"; sourceTree = "<group>"; };
+		3AE5EAAE1E5869810084632F /* polygons-uk-170217.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "polygons-uk-170217.json"; sourceTree = "<group>"; };
+		3AE5EAB31E5877320084632F /* polygons-scandinavia-170217.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "polygons-scandinavia-170217.json"; sourceTree = "<group>"; };
+		3AE5EAB71E60353B0084632F /* polygons-ch-170224.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "polygons-ch-170224.json"; sourceTree = "<group>"; };
+		68237AEF3269549FBF978D04 /* Pods_ASPolygonKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ASPolygonKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DBD2E6E7D9B8E7916A15253 /* Pods-ASPolygonKitExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ASPolygonKitExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ASPolygonKitExampleTests/Pods-ASPolygonKitExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9E79CB79E6F60756298CEACA /* Pods-ASPolygonKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ASPolygonKitExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ASPolygonKitExample/Pods-ASPolygonKitExample.debug.xcconfig"; sourceTree = "<group>"; };
+		BA995ABB79D8C0AC69F0CAA3 /* Pods-ASPolygonKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ASPolygonKitExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ASPolygonKitExample/Pods-ASPolygonKitExample.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3AE5EA821E5864E50084632F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB0D891E88C7B304285962B4 /* Pods_ASPolygonKitExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE5EA961E5864E50084632F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3CF5D9BFC2EEAA746C036E8 /* Pods_ASPolygonKitExampleTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D9DCD09143CF1F537B89468 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68237AEF3269549FBF978D04 /* Pods_ASPolygonKitExample.framework */,
+				170AFE52702E1F6A222D2056 /* Pods_ASPolygonKitExampleTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3AE5EA7C1E5864E50084632F = {
+			isa = PBXGroup;
+			children = (
+				3AE5EA871E5864E50084632F /* ASPolygonKitExample */,
+				3AE5EA9C1E5864E50084632F /* ASPolygonKitExampleTests */,
+				3AE5EA861E5864E50084632F /* Products */,
+				A8183C1FFF2A848B826D99B8 /* Pods */,
+				0D9DCD09143CF1F537B89468 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3AE5EA861E5864E50084632F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3AE5EA851E5864E50084632F /* ASPolygonKitExample.app */,
+				3AE5EA991E5864E50084632F /* ASPolygonKitExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3AE5EA871E5864E50084632F /* ASPolygonKitExample */ = {
+			isa = PBXGroup;
+			children = (
+				3AE5EA881E5864E50084632F /* AppDelegate.swift */,
+				3AE5EA8A1E5864E50084632F /* ViewController.swift */,
+				3AE5EA8C1E5864E50084632F /* Main.storyboard */,
+				3AE5EA8F1E5864E50084632F /* Assets.xcassets */,
+				3AE5EA911E5864E50084632F /* LaunchScreen.storyboard */,
+				3AE5EA941E5864E50084632F /* Info.plist */,
+			);
+			path = ASPolygonKitExample;
+			sourceTree = "<group>";
+		};
+		3AE5EA9C1E5864E50084632F /* ASPolygonKitExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				3AE5EAAC1E5869810084632F /* data */,
+				3AE5EA9D1E5864E50084632F /* ASPolygonKitTests.swift */,
+				3AE5EA9F1E5864E50084632F /* Info.plist */,
+			);
+			path = ASPolygonKitExampleTests;
+			sourceTree = "<group>";
+		};
+		3AE5EAAC1E5869810084632F /* data */ = {
+			isa = PBXGroup;
+			children = (
+				3AE5EAB71E60353B0084632F /* polygons-ch-170224.json */,
+				3AE5EAB31E5877320084632F /* polygons-scandinavia-170217.json */,
+				3AE5EAAD1E5869810084632F /* polygons-tripgo-170217.json */,
+				3AE5EAAE1E5869810084632F /* polygons-uk-170217.json */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		A8183C1FFF2A848B826D99B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E79CB79E6F60756298CEACA /* Pods-ASPolygonKitExample.debug.xcconfig */,
+				BA995ABB79D8C0AC69F0CAA3 /* Pods-ASPolygonKitExample.release.xcconfig */,
+				6DBD2E6E7D9B8E7916A15253 /* Pods-ASPolygonKitExampleTests.debug.xcconfig */,
+				1452783154372C249BF5E589 /* Pods-ASPolygonKitExampleTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3AE5EA841E5864E50084632F /* ASPolygonKitExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AE5EAA21E5864E50084632F /* Build configuration list for PBXNativeTarget "ASPolygonKitExample" */;
+			buildPhases = (
+				2B4652D4DBABCE81795457CD /* [CP] Check Pods Manifest.lock */,
+				3AE5EA811E5864E50084632F /* Sources */,
+				3AE5EA821E5864E50084632F /* Frameworks */,
+				3AE5EA831E5864E50084632F /* Resources */,
+				E715AD620256E5C8982F1BD9 /* [CP] Embed Pods Frameworks */,
+				09A4DC352FD51E7F60F2D082 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ASPolygonKitExample;
+			productName = ASPolygonKitExample;
+			productReference = 3AE5EA851E5864E50084632F /* ASPolygonKitExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3AE5EA981E5864E50084632F /* ASPolygonKitExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AE5EAA51E5864E50084632F /* Build configuration list for PBXNativeTarget "ASPolygonKitExampleTests" */;
+			buildPhases = (
+				D0443B6FA3CAD55A0A18C404 /* [CP] Check Pods Manifest.lock */,
+				3AE5EA951E5864E50084632F /* Sources */,
+				3AE5EA961E5864E50084632F /* Frameworks */,
+				3AE5EA971E5864E50084632F /* Resources */,
+				03E49EB41672E1C6A5F23295 /* [CP] Embed Pods Frameworks */,
+				2F525EFA93FB66AF62870B57 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AE5EA9B1E5864E50084632F /* PBXTargetDependency */,
+			);
+			name = ASPolygonKitExampleTests;
+			productName = ASPolygonKitExampleTests;
+			productReference = 3AE5EA991E5864E50084632F /* ASPolygonKitExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3AE5EA7D1E5864E50084632F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Adrian Schönig";
+				TargetAttributes = {
+					3AE5EA841E5864E50084632F = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 7N3B54ALZK;
+						ProvisioningStyle = Automatic;
+					};
+					3AE5EA981E5864E50084632F = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 7N3B54ALZK;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3AE5EA841E5864E50084632F;
+					};
+				};
+			};
+			buildConfigurationList = 3AE5EA801E5864E50084632F /* Build configuration list for PBXProject "ASPolygonKitExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3AE5EA7C1E5864E50084632F;
+			productRefGroup = 3AE5EA861E5864E50084632F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3AE5EA841E5864E50084632F /* ASPolygonKitExample */,
+				3AE5EA981E5864E50084632F /* ASPolygonKitExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3AE5EA831E5864E50084632F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE5EA931E5864E50084632F /* LaunchScreen.storyboard in Resources */,
+				3AE5EA901E5864E50084632F /* Assets.xcassets in Resources */,
+				3AE5EA8E1E5864E50084632F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE5EA971E5864E50084632F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE5EAB41E5877320084632F /* polygons-scandinavia-170217.json in Resources */,
+				3AE5EAB01E5869810084632F /* polygons-uk-170217.json in Resources */,
+				3AE5EAAF1E5869810084632F /* polygons-tripgo-170217.json in Resources */,
+				3AE5EAB81E60353B0084632F /* polygons-ch-170224.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03E49EB41672E1C6A5F23295 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ASPolygonKitExampleTests/Pods-ASPolygonKitExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		09A4DC352FD51E7F60F2D082 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ASPolygonKitExample/Pods-ASPolygonKitExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B4652D4DBABCE81795457CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2F525EFA93FB66AF62870B57 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ASPolygonKitExampleTests/Pods-ASPolygonKitExampleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0443B6FA3CAD55A0A18C404 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E715AD620256E5C8982F1BD9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ASPolygonKitExample/Pods-ASPolygonKitExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3AE5EA811E5864E50084632F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE5EA8B1E5864E50084632F /* ViewController.swift in Sources */,
+				3AE5EA891E5864E50084632F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE5EA951E5864E50084632F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE5EA9E1E5864E50084632F /* ASPolygonKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3AE5EA9B1E5864E50084632F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3AE5EA841E5864E50084632F /* ASPolygonKitExample */;
+			targetProxy = 3AE5EA9A1E5864E50084632F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3AE5EA8C1E5864E50084632F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AE5EA8D1E5864E50084632F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3AE5EA911E5864E50084632F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AE5EA921E5864E50084632F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3AE5EAA01E5864E50084632F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3AE5EAA11E5864E50084632F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3AE5EAA31E5864E50084632F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E79CB79E6F60756298CEACA /* Pods-ASPolygonKitExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7N3B54ALZK;
+				INFOPLIST_FILE = ASPolygonKitExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.byadrian.ASPolygonKitExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3AE5EAA41E5864E50084632F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA995ABB79D8C0AC69F0CAA3 /* Pods-ASPolygonKitExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7N3B54ALZK;
+				INFOPLIST_FILE = ASPolygonKitExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.byadrian.ASPolygonKitExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		3AE5EAA61E5864E50084632F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DBD2E6E7D9B8E7916A15253 /* Pods-ASPolygonKitExampleTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7N3B54ALZK;
+				INFOPLIST_FILE = ASPolygonKitExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.byadrian.ASPolygonKitExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ASPolygonKitExample.app/ASPolygonKitExample";
+			};
+			name = Debug;
+		};
+		3AE5EAA71E5864E50084632F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1452783154372C249BF5E589 /* Pods-ASPolygonKitExampleTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7N3B54ALZK;
+				INFOPLIST_FILE = ASPolygonKitExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.byadrian.ASPolygonKitExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ASPolygonKitExample.app/ASPolygonKitExample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3AE5EA801E5864E50084632F /* Build configuration list for PBXProject "ASPolygonKitExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AE5EAA01E5864E50084632F /* Debug */,
+				3AE5EAA11E5864E50084632F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AE5EAA21E5864E50084632F /* Build configuration list for PBXNativeTarget "ASPolygonKitExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AE5EAA31E5864E50084632F /* Debug */,
+				3AE5EAA41E5864E50084632F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AE5EAA51E5864E50084632F /* Build configuration list for PBXNativeTarget "ASPolygonKitExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AE5EAA61E5864E50084632F /* Debug */,
+				3AE5EAA71E5864E50084632F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3AE5EA7D1E5864E50084632F /* Project object */;
+}

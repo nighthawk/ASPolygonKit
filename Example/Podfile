@@ -1,12 +1,9 @@
 use_frameworks!
 
-target 'ASPolygonKit_Example' do
+target 'ASPolygonKitExample' do
   pod 'ASPolygonKit', :path => '../'
 
-  target 'ASPolygonKit_Tests' do
+  target 'ASPolygonKitExampleTests' do
     inherit! :search_paths
-
-    pod 'Quick', '~> 1.0.0'
-  pod 'Nimble', '~> 5.1.1'
   end
 end

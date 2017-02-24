@@ -1,0 +1,22 @@
+{
+  "name": "ASPolygonKit",
+  "version": "0.1.0",
+  "summary": "A short description of ASPolygonKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/adrian.schoenig@gmail.com/ASPolygonKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "adrian.schoenig@gmail.com": "adrian.schoenig@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/adrian.schoenig@gmail.com/ASPolygonKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ASPolygonKit/Classes/**/*"
+}

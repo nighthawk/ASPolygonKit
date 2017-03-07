@@ -56,7 +56,7 @@ public struct Point {
 extension Point: Equatable {}
 public func ==(lhs: Point, rhs: Point) -> Bool {
   let epsilon = 0.0001
-  return Double.abs(lhs.lat - rhs.lat) < epsilon && Double.abs(lhs.lng - rhs.lng) < epsilon
+  return abs(lhs.lat - rhs.lat) < epsilon && abs(lhs.lng - rhs.lng) < epsilon
 }
 
 /// A line is defined by two points
@@ -118,7 +118,7 @@ public struct Line {
     
     let epsilon = 0.0001
     let y = m * point.x + b
-    if Double.abs(y - point.y) < epsilon {
+    if abs(y - point.y) < epsilon {
       return inRange( (point.x, point.y) )
     } else {
       return false

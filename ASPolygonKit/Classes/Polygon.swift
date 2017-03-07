@@ -408,7 +408,7 @@ private func angle(start: Point, middle: Point, end: Point) -> Double {
   let arg1 = v1.x * v2.y - v1.y * v2.x
   let arg2 = v1.x * v2.x + v1.y * v2.y
   let atan = atan2(arg1, arg2)
-  let degrees = atan * -180/M_PI
+  let degrees = atan * -180/Double.pi
   if degrees < 0 {
     return degrees + 360
   } else {

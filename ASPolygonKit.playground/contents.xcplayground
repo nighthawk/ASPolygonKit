@@ -3,6 +3,7 @@
     <pages>
         <page name='Finding tricky cases'/>
         <page name='Debugging CH failure'/>
+        <page name='Debugging DE failure'/>
         <page name='Debugging failures'/>
     </pages>
 </playground>

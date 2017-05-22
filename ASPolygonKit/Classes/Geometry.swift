@@ -1,5 +1,5 @@
 //
-//  Geometry.swift.swift
+//  Geometry.swift
 //
 //  Created by Adrian Schoenig on 18/2/17.
 //

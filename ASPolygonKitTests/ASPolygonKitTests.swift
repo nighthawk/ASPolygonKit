@@ -11,7 +11,6 @@ import XCTest
 import MapKit
 
 @testable import ASPolygonKit
-@testable import ASPolygonKitExample
 
 class ASPolygonKitTests: XCTestCase {
     
@@ -168,7 +167,7 @@ extension MutableCollection where Index == Int {
     for i in 0..<count - 1 {
       let j = Int(arc4random_uniform(UInt32(count - i))) + i
       guard i != j else { continue }
-      swap(&self[i], &self[j])
+      swapAt(i, j)
     }
   }
 }

@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A06D01E2029F2680077CADE /* ASPolygonKit_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A06D01C2029F2680077CADE /* ASPolygonKit_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A06D02B2029F2A00077CADE /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06D0252029F2A00077CADE /* Geometry.swift */; };
+		3A06D02D2029F2A00077CADE /* QuickLookable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06D0272029F2A00077CADE /* QuickLookable.swift */; };
+		3A06D02E2029F2A00077CADE /* MKPolygon+Union.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06D0282029F2A00077CADE /* MKPolygon+Union.swift */; };
+		3A06D02F2029F2A00077CADE /* CLLocationCoordinate2D+DecodePolylineString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06D0292029F2A00077CADE /* CLLocationCoordinate2D+DecodePolylineString.swift */; };
+		3A06D0302029F2A00077CADE /* Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06D02A2029F2A00077CADE /* Polygon.swift */; };
+		3A06D0382029F2DA0077CADE /* ASPolygonKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06D0372029F2DA0077CADE /* ASPolygonKitTests.swift */; };
+		3A06D03A2029F2DA0077CADE /* ASPolygonKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A06D0192029F2680077CADE /* ASPolygonKit_iOS.framework */; };
+		3A06D0452029F3610077CADE /* polygons-tripgo-170217.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A06D0412029F3600077CADE /* polygons-tripgo-170217.json */; };
+		3A06D0462029F3610077CADE /* polygons-uk-170217.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A06D0422029F3600077CADE /* polygons-uk-170217.json */; };
+		3A06D0472029F3610077CADE /* polygons-scandinavia-170217.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A06D0432029F3600077CADE /* polygons-scandinavia-170217.json */; };
+		3A06D0482029F3610077CADE /* polygons-ch-170224.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A06D0442029F3600077CADE /* polygons-ch-170224.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A06D03B2029F2DA0077CADE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A06D0102029F2680077CADE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A06D0182029F2680077CADE;
+			remoteInfo = ASPolygonKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A06D0192029F2680077CADE /* ASPolygonKit_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ASPolygonKit_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A06D01C2029F2680077CADE /* ASPolygonKit_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASPolygonKit_iOS.h; sourceTree = "<group>"; };
+		3A06D0252029F2A00077CADE /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		3A06D0272029F2A00077CADE /* QuickLookable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickLookable.swift; sourceTree = "<group>"; };
+		3A06D0282029F2A00077CADE /* MKPolygon+Union.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKPolygon+Union.swift"; sourceTree = "<group>"; };
+		3A06D0292029F2A00077CADE /* CLLocationCoordinate2D+DecodePolylineString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+DecodePolylineString.swift"; sourceTree = "<group>"; };
+		3A06D02A2029F2A00077CADE /* Polygon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Polygon.swift; sourceTree = "<group>"; };
+		3A06D0352029F2D90077CADE /* ASPolygonKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ASPolygonKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A06D0372029F2DA0077CADE /* ASPolygonKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASPolygonKitTests.swift; sourceTree = "<group>"; };
+		3A06D0392029F2DA0077CADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A06D0412029F3600077CADE /* polygons-tripgo-170217.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "polygons-tripgo-170217.json"; sourceTree = "<group>"; };
+		3A06D0422029F3600077CADE /* polygons-uk-170217.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "polygons-uk-170217.json"; sourceTree = "<group>"; };
+		3A06D0432029F3600077CADE /* polygons-scandinavia-170217.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "polygons-scandinavia-170217.json"; sourceTree = "<group>"; };
+		3A06D0442029F3600077CADE /* polygons-ch-170224.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "polygons-ch-170224.json"; sourceTree = "<group>"; };
+		3A06D04A2029F3B70077CADE /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		3A06D04B2029F3B80077CADE /* ASPolygonKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = ASPolygonKit.podspec; sourceTree = "<group>"; };
+		3A06D04C2029F3B80077CADE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3A06D0532029F5140077CADE /* ASPolygonKit_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ASPolygonKit_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A06D0552029F5140077CADE /* ASPolygonKit_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASPolygonKit_macOS.h; sourceTree = "<group>"; };
+		3A06D0562029F5140077CADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A06D0152029F2680077CADE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A06D0322029F2D90077CADE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A06D03A2029F2DA0077CADE /* ASPolygonKit_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A06D04F2029F5140077CADE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A06D00F2029F2680077CADE = {
+			isa = PBXGroup;
+			children = (
+				3A06D0492029F3A00077CADE /* Metadata */,
+				3A06D01B2029F2680077CADE /* ASPolygonKit */,
+				3A06D0362029F2DA0077CADE /* ASPolygonKitTests */,
+				3A06D01A2029F2680077CADE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A06D01A2029F2680077CADE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A06D0192029F2680077CADE /* ASPolygonKit_iOS.framework */,
+				3A06D0352029F2D90077CADE /* ASPolygonKitTests.xctest */,
+				3A06D0532029F5140077CADE /* ASPolygonKit_macOS.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A06D01B2029F2680077CADE /* ASPolygonKit */ = {
+			isa = PBXGroup;
+			children = (
+				3A06D0242029F2A00077CADE /* Classes */,
+				3A06D01C2029F2680077CADE /* ASPolygonKit_iOS.h */,
+				3A06D0552029F5140077CADE /* ASPolygonKit_macOS.h */,
+				3A06D0562029F5140077CADE /* Info.plist */,
+			);
+			path = ASPolygonKit;
+			sourceTree = "<group>";
+		};
+		3A06D0242029F2A00077CADE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3A06D0252029F2A00077CADE /* Geometry.swift */,
+				3A06D0272029F2A00077CADE /* QuickLookable.swift */,
+				3A06D0282029F2A00077CADE /* MKPolygon+Union.swift */,
+				3A06D0292029F2A00077CADE /* CLLocationCoordinate2D+DecodePolylineString.swift */,
+				3A06D02A2029F2A00077CADE /* Polygon.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		3A06D0362029F2DA0077CADE /* ASPolygonKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A06D0402029F3600077CADE /* data */,
+				3A06D0372029F2DA0077CADE /* ASPolygonKitTests.swift */,
+				3A06D0392029F2DA0077CADE /* Info.plist */,
+			);
+			path = ASPolygonKitTests;
+			sourceTree = "<group>";
+		};
+		3A06D0402029F3600077CADE /* data */ = {
+			isa = PBXGroup;
+			children = (
+				3A06D0412029F3600077CADE /* polygons-tripgo-170217.json */,
+				3A06D0422029F3600077CADE /* polygons-uk-170217.json */,
+				3A06D0432029F3600077CADE /* polygons-scandinavia-170217.json */,
+				3A06D0442029F3600077CADE /* polygons-ch-170224.json */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		3A06D0492029F3A00077CADE /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				3A06D04B2029F3B80077CADE /* ASPolygonKit.podspec */,
+				3A06D04A2029F3B70077CADE /* LICENSE */,
+				3A06D04C2029F3B80077CADE /* README.md */,
+			);
+			name = Metadata;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3A06D0162029F2680077CADE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A06D01E2029F2680077CADE /* ASPolygonKit_iOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A06D0502029F5140077CADE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3A06D0182029F2680077CADE /* ASPolygonKit-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A06D0212029F2680077CADE /* Build configuration list for PBXNativeTarget "ASPolygonKit-iOS" */;
+			buildPhases = (
+				3A06D0142029F2680077CADE /* Sources */,
+				3A06D0152029F2680077CADE /* Frameworks */,
+				3A06D0162029F2680077CADE /* Headers */,
+				3A06D0172029F2680077CADE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ASPolygonKit-iOS";
+			productName = ASPolygonKit;
+			productReference = 3A06D0192029F2680077CADE /* ASPolygonKit_iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3A06D0342029F2D90077CADE /* ASPolygonKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A06D03D2029F2DA0077CADE /* Build configuration list for PBXNativeTarget "ASPolygonKitTests" */;
+			buildPhases = (
+				3A06D0312029F2D90077CADE /* Sources */,
+				3A06D0322029F2D90077CADE /* Frameworks */,
+				3A06D0332029F2D90077CADE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A06D03C2029F2DA0077CADE /* PBXTargetDependency */,
+			);
+			name = ASPolygonKitTests;
+			productName = ASPolygonKitTests;
+			productReference = 3A06D0352029F2D90077CADE /* ASPolygonKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3A06D0522029F5140077CADE /* ASPolygonKit-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A06D0582029F5140077CADE /* Build configuration list for PBXNativeTarget "ASPolygonKit-macOS" */;
+			buildPhases = (
+				3A06D04E2029F5140077CADE /* Sources */,
+				3A06D04F2029F5140077CADE /* Frameworks */,
+				3A06D0502029F5140077CADE /* Headers */,
+				3A06D0512029F5140077CADE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ASPolygonKit-macOS";
+			productName = "ASPolygonKit-macOS";
+			productReference = 3A06D0532029F5140077CADE /* ASPolygonKit_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A06D0102029F2680077CADE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Adrian Schönig";
+				TargetAttributes = {
+					3A06D0182029F2680077CADE = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					3A06D0342029F2D90077CADE = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					3A06D0522029F5140077CADE = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3A06D0132029F2680077CADE /* Build configuration list for PBXProject "ASPolygonKit" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3A06D00F2029F2680077CADE;
+			productRefGroup = 3A06D01A2029F2680077CADE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A06D0182029F2680077CADE /* ASPolygonKit-iOS */,
+				3A06D0522029F5140077CADE /* ASPolygonKit-macOS */,
+				3A06D0342029F2D90077CADE /* ASPolygonKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A06D0172029F2680077CADE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A06D0332029F2D90077CADE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A06D0462029F3610077CADE /* polygons-uk-170217.json in Resources */,
+				3A06D0472029F3610077CADE /* polygons-scandinavia-170217.json in Resources */,
+				3A06D0452029F3610077CADE /* polygons-tripgo-170217.json in Resources */,
+				3A06D0482029F3610077CADE /* polygons-ch-170224.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A06D0512029F5140077CADE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A06D0142029F2680077CADE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A06D02F2029F2A00077CADE /* CLLocationCoordinate2D+DecodePolylineString.swift in Sources */,
+				3A06D0302029F2A00077CADE /* Polygon.swift in Sources */,
+				3A06D02D2029F2A00077CADE /* QuickLookable.swift in Sources */,
+				3A06D02E2029F2A00077CADE /* MKPolygon+Union.swift in Sources */,
+				3A06D02B2029F2A00077CADE /* Geometry.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A06D0312029F2D90077CADE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A06D0382029F2DA0077CADE /* ASPolygonKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A06D04E2029F5140077CADE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A06D03C2029F2DA0077CADE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A06D0182029F2680077CADE /* ASPolygonKit-iOS */;
+			targetProxy = 3A06D03B2029F2DA0077CADE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3A06D01F2029F2680077CADE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3A06D0202029F2680077CADE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3A06D0222029F2680077CADE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7N3B54ALZK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ASPolygonKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.schoenig.adrian.ASPolygonKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3A06D0232029F2680077CADE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7N3B54ALZK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ASPolygonKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.schoenig.adrian.ASPolygonKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3A06D03E2029F2DA0077CADE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7N3B54ALZK;
+				INFOPLIST_FILE = ASPolygonKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.schoenig.adrian.ASPolygonKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3A06D03F2029F2DA0077CADE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7N3B54ALZK;
+				INFOPLIST_FILE = ASPolygonKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.schoenig.adrian.ASPolygonKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3A06D0592029F5140077CADE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7N3B54ALZK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = ASPolygonKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.schoenig.adrian.ASPolygonKit-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		3A06D05A2029F5140077CADE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7N3B54ALZK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = ASPolygonKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.schoenig.adrian.ASPolygonKit-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A06D0132029F2680077CADE /* Build configuration list for PBXProject "ASPolygonKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A06D01F2029F2680077CADE /* Debug */,
+				3A06D0202029F2680077CADE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A06D0212029F2680077CADE /* Build configuration list for PBXNativeTarget "ASPolygonKit-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A06D0222029F2680077CADE /* Debug */,
+				3A06D0232029F2680077CADE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A06D03D2029F2DA0077CADE /* Build configuration list for PBXNativeTarget "ASPolygonKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A06D03E2029F2DA0077CADE /* Debug */,
+				3A06D03F2029F2DA0077CADE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A06D0582029F5140077CADE /* Build configuration list for PBXNativeTarget "ASPolygonKit-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A06D0592029F5140077CADE /* Debug */,
+				3A06D05A2029F5140077CADE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A06D0102029F2680077CADE /* Project object */;
+}

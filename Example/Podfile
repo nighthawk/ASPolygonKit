@@ -1,9 +1,0 @@
-use_frameworks!
-
-target 'ASPolygonKitExample' do
-  pod 'ASPolygonKit', :path => '../'
-
-  target 'ASPolygonKitExampleTests' do
-    inherit! :search_paths
-  end
-end

@@ -5,16 +5,22 @@
 [![License](https://img.shields.io/cocoapods/l/ASPolygonKit.svg?style=flat)](http://cocoapods.org/pods/ASPolygonKit)
 [![Platform](https://img.shields.io/cocoapods/p/ASPolygonKit.svg?style=flat)](http://cocoapods.org/pods/ASPolygonKit)
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
 ## Requirements
 
 ## Installation
 
-ASPolygonKit is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+### Carthage
+
+Add the following line to your `Cartfile`:
+
+```ruby
+github "nighthawk/ASPolygonKit"
+```
+
+
+### [CocoaPods](http://cocoapods.org)
+
+Add the following line to your `Podfile`:
 
 ```ruby
 pod "ASPolygonKit"
@@ -22,7 +28,7 @@ pod "ASPolygonKit"
 
 ## Author
 
-adrian.schoenig@gmail.com, adrian.schoenig@gmail.com
+adrian.schoenig@gmail.com
 
 ## License
 

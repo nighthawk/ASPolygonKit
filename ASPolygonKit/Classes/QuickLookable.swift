@@ -8,6 +8,7 @@
 import Foundation
 
 #if os(iOS) || os(tvOS)
+  import UIKit
   public typealias SGKImage = UIImage
 #elseif os(OSX)
   import Cocoa

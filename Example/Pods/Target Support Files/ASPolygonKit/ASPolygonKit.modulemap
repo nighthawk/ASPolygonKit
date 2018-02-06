@@ -1,6 +1,0 @@
-framework module ASPolygonKit {
-  umbrella header "ASPolygonKit-umbrella.h"
-
-  export *
-  module * { export * }
-}

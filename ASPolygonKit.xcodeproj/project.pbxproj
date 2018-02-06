@@ -14,7 +14,7 @@
 		3A06D02F2029F2A00077CADE /* CLLocationCoordinate2D+DecodePolylineString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06D0292029F2A00077CADE /* CLLocationCoordinate2D+DecodePolylineString.swift */; };
 		3A06D0302029F2A00077CADE /* Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06D02A2029F2A00077CADE /* Polygon.swift */; };
 		3A06D0382029F2DA0077CADE /* ASPolygonKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06D0372029F2DA0077CADE /* ASPolygonKitTests.swift */; };
-		3A06D03A2029F2DA0077CADE /* ASPolygonKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A06D0192029F2680077CADE /* ASPolygonKit_iOS.framework */; };
+		3A06D03A2029F2DA0077CADE /* ASPolygonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A06D0192029F2680077CADE /* ASPolygonKit.framework */; };
 		3A06D0452029F3610077CADE /* polygons-tripgo-170217.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A06D0412029F3600077CADE /* polygons-tripgo-170217.json */; };
 		3A06D0462029F3610077CADE /* polygons-uk-170217.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A06D0422029F3600077CADE /* polygons-uk-170217.json */; };
 		3A06D0472029F3610077CADE /* polygons-scandinavia-170217.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A06D0432029F3600077CADE /* polygons-scandinavia-170217.json */; };
@@ -32,7 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3A06D0192029F2680077CADE /* ASPolygonKit_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ASPolygonKit_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A06D0192029F2680077CADE /* ASPolygonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ASPolygonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A06D01C2029F2680077CADE /* ASPolygonKit_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASPolygonKit_iOS.h; sourceTree = "<group>"; };
 		3A06D0252029F2A00077CADE /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		3A06D0272029F2A00077CADE /* QuickLookable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickLookable.swift; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 		3A06D04A2029F3B70077CADE /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3A06D04B2029F3B80077CADE /* ASPolygonKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = ASPolygonKit.podspec; sourceTree = "<group>"; };
 		3A06D04C2029F3B80077CADE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		3A06D0532029F5140077CADE /* ASPolygonKit_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ASPolygonKit_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A06D0532029F5140077CADE /* ASPolygonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ASPolygonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A06D0552029F5140077CADE /* ASPolygonKit_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASPolygonKit_macOS.h; sourceTree = "<group>"; };
 		3A06D0562029F5140077CADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A06D03A2029F2DA0077CADE /* ASPolygonKit_iOS.framework in Frameworks */,
+				3A06D03A2029F2DA0077CADE /* ASPolygonKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,9 +93,9 @@
 		3A06D01A2029F2680077CADE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3A06D0192029F2680077CADE /* ASPolygonKit_iOS.framework */,
+				3A06D0192029F2680077CADE /* ASPolygonKit.framework */,
 				3A06D0352029F2D90077CADE /* ASPolygonKitTests.xctest */,
-				3A06D0532029F5140077CADE /* ASPolygonKit_macOS.framework */,
+				3A06D0532029F5140077CADE /* ASPolygonKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,7 +190,7 @@
 			);
 			name = "ASPolygonKit-iOS";
 			productName = ASPolygonKit;
-			productReference = 3A06D0192029F2680077CADE /* ASPolygonKit_iOS.framework */;
+			productReference = 3A06D0192029F2680077CADE /* ASPolygonKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		3A06D0342029F2D90077CADE /* ASPolygonKitTests */ = {
@@ -226,7 +226,7 @@
 			);
 			name = "ASPolygonKit-macOS";
 			productName = "ASPolygonKit-macOS";
-			productReference = 3A06D0532029F5140077CADE /* ASPolygonKit_macOS.framework */;
+			productReference = 3A06D0532029F5140077CADE /* ASPolygonKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -466,7 +466,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.schoenig.adrian.ASPolygonKit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = ASPolygonKit;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -487,7 +487,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.schoenig.adrian.ASPolygonKit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = ASPolygonKit;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -539,7 +539,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.schoenig.adrian.ASPolygonKit-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = ASPolygonKit;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -563,7 +563,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.schoenig.adrian.ASPolygonKit-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = ASPolygonKit;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;

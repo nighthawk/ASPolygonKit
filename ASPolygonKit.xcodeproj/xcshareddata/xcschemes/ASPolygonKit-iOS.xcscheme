@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A06D0182029F2680077CADE"
-               BuildableName = "ASPolygonKit_iOS.framework"
+               BuildableName = "ASPolygonKit.framework"
                BlueprintName = "ASPolygonKit-iOS"
                ReferencedContainer = "container:ASPolygonKit.xcodeproj">
             </BuildableReference>
@@ -48,7 +48,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A06D0182029F2680077CADE"
-            BuildableName = "ASPolygonKit_iOS.framework"
+            BuildableName = "ASPolygonKit.framework"
             BlueprintName = "ASPolygonKit-iOS"
             ReferencedContainer = "container:ASPolygonKit.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A06D0182029F2680077CADE"
-            BuildableName = "ASPolygonKit_iOS.framework"
+            BuildableName = "ASPolygonKit.framework"
             BlueprintName = "ASPolygonKit-iOS"
             ReferencedContainer = "container:ASPolygonKit.xcodeproj">
          </BuildableReference>

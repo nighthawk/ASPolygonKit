@@ -19,6 +19,12 @@
 		3A06D0462029F3610077CADE /* polygons-uk-170217.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A06D0422029F3600077CADE /* polygons-uk-170217.json */; };
 		3A06D0472029F3610077CADE /* polygons-scandinavia-170217.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A06D0432029F3600077CADE /* polygons-scandinavia-170217.json */; };
 		3A06D0482029F3610077CADE /* polygons-ch-170224.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A06D0442029F3600077CADE /* polygons-ch-170224.json */; };
+		3ABBDB0E203214A900205042 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06D0252029F2A00077CADE /* Geometry.swift */; };
+		3ABBDB0F203214A900205042 /* QuickLookable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06D0272029F2A00077CADE /* QuickLookable.swift */; };
+		3ABBDB10203214A900205042 /* MKPolygon+Union.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06D0282029F2A00077CADE /* MKPolygon+Union.swift */; };
+		3ABBDB11203214A900205042 /* CLLocationCoordinate2D+DecodePolylineString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06D0292029F2A00077CADE /* CLLocationCoordinate2D+DecodePolylineString.swift */; };
+		3ABBDB12203214A900205042 /* Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A06D02A2029F2A00077CADE /* Polygon.swift */; };
+		3ABBDB13203214B200205042 /* ASPolygonKit_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A06D0552029F5140077CADE /* ASPolygonKit_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +175,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ABBDB13203214B200205042 /* ASPolygonKit_macOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +332,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ABBDB11203214A900205042 /* CLLocationCoordinate2D+DecodePolylineString.swift in Sources */,
+				3ABBDB12203214A900205042 /* Polygon.swift in Sources */,
+				3ABBDB0F203214A900205042 /* QuickLookable.swift in Sources */,
+				3ABBDB10203214A900205042 /* MKPolygon+Union.swift in Sources */,
+				3ABBDB0E203214A900205042 /* Geometry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

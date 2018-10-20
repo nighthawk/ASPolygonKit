@@ -65,7 +65,7 @@ extension MKPolygon {
   }
   
   public func contains(_ coordinate: CLLocationCoordinate2D) -> Bool {
-    if (!MKMapRectContainsPoint(boundingMapRect, MKMapPointForCoordinate(coordinate))) {
+    if (!boundingMapRect.contains(MKMapPoint(coordinate))) {
       return false
     }
     

@@ -5,8 +5,6 @@
 [![License](https://img.shields.io/cocoapods/l/ASPolygonKit.svg?style=flat)](http://cocoapods.org/pods/ASPolygonKit)
 [![Platform](https://img.shields.io/cocoapods/p/ASPolygonKit.svg?style=flat)](http://cocoapods.org/pods/ASPolygonKit)
 
-## Requirements
-
 ## Installation
 
 ### Carthage

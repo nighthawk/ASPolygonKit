@@ -159,8 +159,7 @@ extension Collection {
 extension MutableCollection where Index == Int {
   /// Shuffle the elements of `self` in-place.
   mutating func shuffleInPlace() {
-    guard let count = count as? Int else { preconditionFailure() }
-    
+
     // empty and single-element collections don't shuffle
     if count < 2 { return }
     
@@ -187,7 +186,7 @@ extension MKPolygon : CustomPlaygroundQuickLookable {
   
   fileprivate var quickLookImage: UIImage? {
    
-    let options = MKMapSnapshotOptions()
+    let options = MKMapSnapshotter.Options()
     options.mapRect = self.boundingMapRect
     
     let snapshotter = MKMapSnapshotter(options: options)

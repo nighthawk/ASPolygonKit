@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ASPolygonKit'
-  s.version          = '0.1.5'
+  s.version          = '0.2.0'
   s.summary          = 'A little Swift toolkit for working with polygons'
 
   s.description      = <<-DESC
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.11'
-  s.swift_version    = '4.0'
+  s.swift_version    = '4.2'
 
   s.source_files = 'ASPolygonKit/Classes/**/*'
 

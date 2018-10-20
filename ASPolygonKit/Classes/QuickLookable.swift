@@ -83,16 +83,10 @@ extension Polygon {
 }
 
 #if os(OSX)
-extension Polygon: CustomPlaygroundQuickLookable {
-  
-  public var customPlaygroundQuickLook: PlaygroundQuickLook {
-    if let image = quickLookImage {
-      return .image(image)
-    } else {
-      return .text(description!)
-    }
+extension Polygon: CustomPlaygroundDisplayConvertible {
+  public var playgroundDescription: Any {
+    return quickLookImage ?? description ?? "Undefined polygon"
   }
-  
 }
 #endif
 

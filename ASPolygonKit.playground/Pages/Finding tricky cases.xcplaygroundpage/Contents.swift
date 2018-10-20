@@ -19,7 +19,7 @@ extension MKPolygon {
 
 var polygons = encoded.map { MKPolygon(encoded: $0) }
 polygons.sort {
-  return $0.0.boundingMapRect.distanceFromOrigin < $0.1.boundingMapRect.distanceFromOrigin
+  return $0.boundingMapRect.distanceFromOrigin < $1.boundingMapRect.distanceFromOrigin
 }
 
 var grower = Polygon(polygons[0])

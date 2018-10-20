@@ -182,10 +182,12 @@ extension MKPolygon {
   
 }
 
-extension MKPolygon : CustomPlaygroundQuickLookable {
+extension MKPolygon : CustomPlaygroundDisplayConvertible {
+  public var playgroundDescription: Any {
+    return quickLookImage ?? description
+  }
   
   fileprivate var quickLookImage: UIImage? {
-   
     let options = MKMapSnapshotter.Options()
     options.mapRect = self.boundingMapRect
     
@@ -203,27 +205,10 @@ extension MKPolygon : CustomPlaygroundQuickLookable {
     semaphore.wait()
 
     return image
-    
   }
-  
   
   public var debugQuickLookObject: Any {
-    
     return quickLookImage ?? description
-    
   }
-  
-  
-  
-  public var customPlaygroundQuickLook: PlaygroundQuickLook {
-    
-    if let image = quickLookImage {
-      return .image(image)
-    } else {
-      return .text(description)
-    }
-    
-  }
-  
-  
+
 }

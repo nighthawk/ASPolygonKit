@@ -1,1 +1,0 @@
-../../ASPolygonKit/Classes/QuickLookable.swift

@@ -15,7 +15,6 @@ Add the following line to your `Cartfile`:
 github "nighthawk/ASPolygonKit"
 ```
 
-
 ### [CocoaPods](http://cocoapods.org)
 
 Add the following line to your `Podfile`:
@@ -26,7 +25,7 @@ pod "ASPolygonKit"
 
 ## Author
 
-adrian.schoenig@gmail.com
+adrian@schoenig.me
 
 ## License
 

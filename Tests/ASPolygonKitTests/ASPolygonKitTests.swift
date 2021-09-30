@@ -10,6 +10,10 @@ import XCTest
 
 import MapKit
 
+#if canImport(UIKit)
+import UIKit
+#endif
+
 @testable import ASPolygonKit
 
 class ASPolygonKitTests: XCTestCase {
@@ -84,18 +88,6 @@ class ASPolygonKitTests: XCTestCase {
     try grower.union(addition)
     XCTAssert(grower.points.count > 1)
   }
-  
-  static var allTests = [
-    ("testAll", testAll),
-    ("testCH", testCH),
-    ("testUK", testUK),
-    ("testScandinavia", testScandinavia),
-    ("testInvariantToShuffling", testInvariantToShuffling),
-    ("testOCFailure", testOCFailure),
-    ("testSinglePointFailure", testSinglePointFailure),
-    ("testPolygonContains", testPolygonContains),
-    ("testUnsuccessfulUnion", testUnsuccessfulUnion),
-  ]
 }
 
 
@@ -135,6 +127,7 @@ extension MKPolygon {
   }
 }
 
+#if canImport(UIKit)
 extension MKPolygon : CustomPlaygroundDisplayConvertible {
   public var playgroundDescription: Any {
     return quickLookImage ?? description
@@ -161,3 +154,4 @@ extension MKPolygon : CustomPlaygroundDisplayConvertible {
     return quickLookImage ?? description
   }
 }
+#endif

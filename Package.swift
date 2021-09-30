@@ -27,6 +27,7 @@ let package = Package(
       dependencies: []),
     .testTarget(
       name: "ASPolygonKitTests",
-      dependencies: ["ASPolygonKit"]),
+      dependencies: ["ASPolygonKit"],
+      exclude: ["data"]),
   ]
 )

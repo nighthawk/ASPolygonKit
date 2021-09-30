@@ -7,6 +7,8 @@
 
 import Foundation
 
+#if canImport(CoreGraphics)
+
 #if os(iOS) || os(tvOS)
   import UIKit
 #elseif os(OSX)
@@ -104,3 +106,5 @@ extension Point {
   }
   
 }
+
+#endif

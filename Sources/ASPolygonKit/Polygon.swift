@@ -7,8 +7,6 @@
 
 import Foundation
 
-import MapKit
-
 enum PolygonUnionError: Error {
   
   case noIntersections
@@ -21,18 +19,23 @@ enum PolygonUnionError: Error {
 public struct Polygon {
   var points: [Point] {
     didSet {
-      firstLink = Polygon.firstLink(forPoints: points)
+      firstLink = Polygon.firstLink(for: points)
     }
   }
   
-  fileprivate var firstLink: LinkedLine
+  var firstLink: LinkedLine
   
   public init(pairs: [(Double, Double)]) {
-    points = pairs.map { pair in
-      Point(ll: pair)
-    }
-    firstLink = Polygon.firstLink(forPoints: points)
+    self.init(points: pairs.map { pair in
+      Point(latitude: pair.0, longitude: pair.1)
+    })
   }
+  
+  public init(points: [Point]) {
+    self.points = points
+    firstLink = Polygon.firstLink(for: points)
+  }
+
   
   // MARK: Basic info
   
@@ -72,30 +75,9 @@ public struct Polygon {
   }
   
   
-  // MARK: MapKit / CoreLocation
-  
-  public init(_ polygon: MKPolygon) {
-    let count = polygon.pointCount
-    var coordinates = [CLLocationCoordinate2D](repeating: kCLLocationCoordinate2DInvalid, count: count)
-    let range = NSRange(location: 0, length: count)
-    polygon.getCoordinates(&coordinates, range: range)
-    
-    points = coordinates.map { coordinate in
-      Point(ll: (coordinate.latitude, coordinate.longitude))
-    }
-    firstLink = Polygon.firstLink(forPoints: points)
-  }
-  
-  var polygon: MKPolygon {
-    var coordinates = points.map { point in
-      point.coordinate
-    }
-    return MKPolygon(coordinates: &coordinates, count: coordinates.count)
-  }
-  
   // MARK: Polygon as list of lines
   
-  private static func firstLink(forPoints points: [Point]) -> LinkedLine {
+  static func firstLink(for points: [Point]) -> LinkedLine {
     var first: LinkedLine? = nil
     var previous: LinkedLine? = nil
     for (index, point) in points.enumerated() {
@@ -154,7 +136,7 @@ public struct Polygon {
       }
     }
     
-    let ray = Line(start: point, end: Point(ll: (0, 0))) // assuming no polygon contains the coast of africa
+    let ray = Line(start: point, end: Point(x: 0, y: 0)) // assuming no polygon contains the coast of africa
     return numberOfIntersections(ray) % 2 == 1
   }
   
@@ -339,7 +321,7 @@ public struct Polygon {
 
 // To find the polygon between the two polygons, we see if there's an intersection between each pair of lines between the polygons. First we need to get the lines in a polygon.
 
-private class LinkedLine: Sequence, Equatable {
+class LinkedLine: Sequence, Equatable {
   let line: Line
   var next: LinkedLine?
   
@@ -358,7 +340,7 @@ private class LinkedLine: Sequence, Equatable {
   }
 }
 
-private func ==(lhs: LinkedLine, rhs: LinkedLine) -> Bool {
+func ==(lhs: LinkedLine, rhs: LinkedLine) -> Bool {
   return lhs.line == rhs.line
 }
 

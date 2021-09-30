@@ -1,5 +1,7 @@
 # ASPolygonKit
 
+[![CI](https://github.com/nighthawk/ASPolygonKit/actions/workflows/swift.yml/badge.svg)](https://github.com/nighthawk/ASPolygonKit/actions/workflows/swift.yml)
+
 ## Installation
 
 ### Swift Package Manager

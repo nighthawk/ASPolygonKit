@@ -1,32 +1,20 @@
 # ASPolygonKit
 
-[![CI Status](http://img.shields.io/travis/nighthawk/ASPolygonKit.svg?style=flat)](https://travis-ci.org/nighthawk/ASPolygonKit)
-[![Version](https://img.shields.io/cocoapods/v/ASPolygonKit.svg?style=flat)](http://cocoapods.org/pods/ASPolygonKit)
-[![License](https://img.shields.io/cocoapods/l/ASPolygonKit.svg?style=flat)](http://cocoapods.org/pods/ASPolygonKit)
-[![Platform](https://img.shields.io/cocoapods/p/ASPolygonKit.svg?style=flat)](http://cocoapods.org/pods/ASPolygonKit)
-
 ## Installation
 
-### Carthage
+### Swift Package Manager
 
-Add the following line to your `Cartfile`:
+To install ASPolygonKit using the [Swift Package Manager](https://swift.org/package-manager/), add the following package to the `dependencies` in your Package.swift file:
 
-```ruby
-github "nighthawk/ASPolygonKit"
+```swift
+.package(url: "https://github.com/nighthawk/aspolygonkit.git", from: "0.3.0")
 ```
 
-
-### [CocoaPods](http://cocoapods.org)
-
-Add the following line to your `Podfile`:
-
-```ruby
-pod "ASPolygonKit"
-```
+Then `import ASPolygonKit` in any Swift file in your module.
 
 ## Author
 
-adrian.schoenig@gmail.com
+adrian@schoenig.me
 
 ## License
 

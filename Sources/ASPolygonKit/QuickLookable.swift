@@ -9,10 +9,8 @@ import Foundation
 
 #if os(iOS) || os(tvOS)
   import UIKit
-  public typealias SGKImage = UIImage
 #elseif os(OSX)
   import Cocoa
-  public typealias SGKImage = NSImage
 #endif
   
 extension Polygon {
@@ -106,5 +104,3 @@ extension Point {
   }
   
 }
-
-

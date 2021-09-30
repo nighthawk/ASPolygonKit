@@ -17,7 +17,7 @@ enum PolygonUnionError: Error {
 }
 
 public struct Polygon {
-  var points: [Point] {
+  public internal(set) var points: [Point] {
     didSet {
       firstLink = Polygon.firstLink(for: points)
     }

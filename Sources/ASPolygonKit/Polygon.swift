@@ -7,6 +7,10 @@
 
 import Foundation
 
+#if canImport(CoreGraphics)
+import CoreGraphics
+#endif
+
 enum PolygonUnionError: Error {
   
   case noIntersections
@@ -70,9 +74,11 @@ public struct Polygon {
     }
   }
   
+  #if canImport(CoreGraphics)
   public var boundingRect: CGRect {
     return CGRect(x: minX, y: minY, width: maxX - minX, height: maxY - minY)
   }
+  #endif
   
   
   // MARK: Polygon as list of lines

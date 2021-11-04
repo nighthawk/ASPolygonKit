@@ -13,7 +13,6 @@ import CoreGraphics
 
 enum PolygonUnionError: Error {
   
-  case noIntersections
   case polygonTooComplex
   case polygonIsSubset
   case invalidPolygon
@@ -157,21 +156,30 @@ public struct Polygon {
   
   // MARK: Union
   
-  public mutating func union(_ polygon: Polygon) throws {
+  @discardableResult
+  /// Merged the provided polygon into the caller
+  /// - Parameter polygon: Polygon to merge into `self`
+  /// - Returns: Whether the polygon was merged; return `false` if there's no overlap
+  mutating func union(_ polygon: Polygon) throws -> Bool {
     let intersections = self.intersections(polygon)
     if intersections.count == 0 {
-      throw PolygonUnionError.noIntersections
+      return false
     }
     
-    try union(polygon, with: intersections)
+    return try union(polygon, with: intersections, allowInverting: true)
   }
   
-  mutating func union(_ polygon: Polygon, with intersections: [Intersection]) throws {
+  @discardableResult
+  mutating func union(_ polygon: Polygon, with intersections: [Intersection]) throws -> Bool {
+    try union(polygon, with: intersections, allowInverting: true)
+  }
+  
+  private mutating func union(_ polygon: Polygon, with intersections: [Intersection], allowInverting: Bool) throws -> Bool {
     if polygon.points.count < 3 || points.count < 3 {
       throw PolygonUnionError.invalidPolygon
     }
     if intersections.count == 0 {
-      throw PolygonUnionError.noIntersections
+      return false
     }
     
     var startLink: LinkedLine = firstLink
@@ -186,9 +194,23 @@ public struct Polygon {
       }
     }
     if polygon.contains(startLink.line.start, onLine: true) {
-      throw PolygonUnionError.polygonIsSubset
+      // This polygon is (deemed to be) a subset of the polygon that you're
+      // trying to merge into it. If this happens, we try it  the other way
+      // around.
+      if allowInverting {
+        var grower = polygon
+        let invertedIntersections = grower.intersections(self)
+        let merged = try grower.union(self, with: invertedIntersections, allowInverting: false)
+        if merged {
+          self = grower
+          return true
+        } else {
+          return false
+        }
+      } else {
+        throw PolygonUnionError.polygonIsSubset
+      }
     }
-    
     
     let startPoint = startLink.line.start
     var current = (point: startLink.line.start, link: startLink, onMine: true)
@@ -233,6 +255,7 @@ public struct Polygon {
     
     assert(newPoints.count > 2, "Should never end up with a line (or less) after merging")
     points = newPoints
+    return true
   }
   
   

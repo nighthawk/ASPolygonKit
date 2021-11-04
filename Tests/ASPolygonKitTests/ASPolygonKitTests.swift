@@ -27,7 +27,7 @@ class ASPolygonKitTests: XCTestCase {
     let polygons = try polygonsFromJSON(named: "polygons-ch-170224")
     XCTAssertEqual(5, polygons.count)
     
-    let merged = Polygon.union(polygons)
+    let merged = try Polygon.union(polygons)
     XCTAssertEqual(1, merged.count)
   }
   
@@ -35,7 +35,7 @@ class ASPolygonKitTests: XCTestCase {
     let polygons = try polygonsFromJSON(named: "polygons-uk-170217")
     XCTAssertEqual(19, polygons.count)
     
-    let merged = Polygon.union(polygons)
+    let merged = try Polygon.union(polygons)
     XCTAssertEqual(1, merged.count)
   }
 
@@ -43,18 +43,25 @@ class ASPolygonKitTests: XCTestCase {
     let polygons = try polygonsFromJSON(named: "polygons-scandinavia-170217")
     XCTAssertEqual(16, polygons.count)
     
-    let merged = Polygon.union(polygons)
+    let merged = try Polygon.union(polygons)
     XCTAssertEqual(1, merged.count)
   }
   
+  func testStaya() throws {
+    let polygons = try polygonsFromJSON(named: "polygons-au-211102")
+    XCTAssertEqual(13, polygons.count)
+    
+    let merged = try Polygon.union(polygons)
+    XCTAssertEqual(7, merged.count)
+  }
   
   func testInvariantToShuffling() throws {
     let polygons = try polygonsFromJSON(named: "polygons-uk-170217")
     XCTAssertEqual(19, polygons.count)
     
-    let _ = (1...100).map { _ in
+    let _ = try (1...100).map { _ in
       let shuffled = polygons.shuffled()
-      let merged = Polygon.union(shuffled)
+      let merged = try Polygon.union(shuffled)
       XCTAssertEqual(1, merged.count)
     }
   }
@@ -62,15 +69,16 @@ class ASPolygonKitTests: XCTestCase {
   func testOCFailure() throws {
     var grower = Polygon(pairs: [ (4,0), (4,3), (1,3), (1,0) ])
     let addition = Polygon(pairs: [ (5,1), (5,4), (3,4), (3,2), (2,2), (2,4), (0,4), (0,1) ])
-    try grower.union(addition)
+    let merged = try grower.union(addition)
+    XCTAssertTrue(merged)
     XCTAssertEqual(12, grower.points.count)
   }
-  
   
   func testSinglePointFailure() throws {
     var grower = Polygon(pairs: [ (53.5,-7.77), (52.15,-6.25), (51.2,-10) ])
     let addition = Polygon(pairs: [ (53.4600,-7.77), (54,-10), (55,-7.77) ])
-    try grower.union(addition)
+    let merged = try grower.union(addition)
+    XCTAssertTrue(merged)
     XCTAssert(grower.points.count > 1)
   }
   
@@ -85,7 +93,8 @@ class ASPolygonKitTests: XCTestCase {
     var grower = Polygon(pairs: [ (60.0000,-5.0000), (60.0000,0.0000), (56.2000,0.0000), (56.2000,-5.0000) ] )
     let addition = Polygon(pairs: [ (56.2500,-5.0000), (56.2500,0.0000), (55.9500,-1.8500), (55.1700,-5.7700) ] )
     
-    try grower.union(addition)
+    let merged = try grower.union(addition)
+    XCTAssertTrue(merged)
     XCTAssert(grower.points.count > 1)
   }
 }

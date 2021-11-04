@@ -10,7 +10,7 @@ import MapKit
 #endif
 
 extension Polygon {
-  public static func union(_ polygons: [Polygon]) -> [Polygon] {
+  public static func union(_ polygons: [Polygon]) throws -> [Polygon] {
     let sorted = polygons.sorted { first, second in
       if first.minY < second.minY {
         return true
@@ -21,12 +21,12 @@ extension Polygon {
       }
     }
     
-    return sorted.reduce([]) { polygons, polygon in
-      return union(polygons, with: polygon)
+    return try sorted.reduce([]) { polygons, polygon in
+      try union(polygons, with: polygon)
     }
   }
   
-  public static func union(_ polygons: [Polygon], with polygon: Polygon) -> [Polygon] {
+  public static func union(_ polygons: [Polygon], with polygon: Polygon) throws -> [Polygon] {
     var grower = polygon
     var newArray: [Polygon] = []
     
@@ -37,9 +37,8 @@ extension Polygon {
       }
       let intersections = grower.intersections(existing)
       if intersections.count > 0 {
-        do {
-          try grower.union(existing, with: intersections)
-        } catch {
+        let merged = try grower.union(existing, with: intersections)
+        if !merged {
           newArray.append(existing)
         }
       } else {
@@ -56,36 +55,28 @@ extension Polygon {
 #if canImport(MapKit)
 extension MKPolygon {
   
-  @objc(unionOfPolygons:completionHandler:)
-  public class func union(_ polygons: [MKPolygon], completion: @escaping ([MKPolygon]) -> Void) {
+  public class func union(_ polygons: [MKPolygon], completion: @escaping (Result<[MKPolygon], Error>) -> Void) {
     let queue = DispatchQueue(label: "MKPolygonUnionMerger", qos: .background)
     queue.async {
-      let result = union(polygons)
+      let result = Result { try union(polygons) }
       DispatchQueue.main.async {
         completion(result)
       }
     }
   }
   
-  @objc(unionOfPolygons:)
-  public class func union(_ polygons: [MKPolygon]) -> [MKPolygon] {
-    
+  public class func union(_ polygons: [MKPolygon]) throws -> [MKPolygon] {
     let sorted = polygons.sorted(by: { first, second in
       return first.boundingMapRect.distanceFromOrigin < second.boundingMapRect.distanceFromOrigin
     })
     
-    return sorted.reduce([]) { polygons, polygon in
-      return union(polygons, with: polygon)
+    return try sorted.reduce([]) { polygons, polygon in
+      return try union(polygons, with: polygon)
     }
-    
-    //    return polygons.reduce([]) { polygons, polygon in
-    //      return union(polygons, with: polygon)
-    //    }
-    
   }
+
   
-  @objc(unionOfPolygons:withPolygon:)
-  public class func union(_ polygons: [MKPolygon], with polygon: MKPolygon) -> [MKPolygon] {
+  public class func union(_ polygons: [MKPolygon], with polygon: MKPolygon) throws -> [MKPolygon] {
     var grower = Polygon(polygon)
     var newArray: [MKPolygon] = []
     
@@ -97,9 +88,8 @@ extension MKPolygon {
       }
       let intersections = grower.intersections(existingStruct)
       if intersections.count > 0 {
-        do {
-          try grower.union(existingStruct, with: intersections)
-        } catch {
+        let merged = try grower.union(existingStruct, with: intersections)
+        if !merged {
           newArray.append(existing)
         }
       } else {

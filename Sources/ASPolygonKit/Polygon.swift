@@ -365,7 +365,7 @@ public struct Polygon {
             end = link.line.end
           }
           
-          let angle = angle(start: start, middle: point, end: end)
+          let angle = calculateAngle(start: start, middle: point, end: end)
           return (angle, end)
         }.min { $0.angle < $1.angle }!
       }
@@ -482,8 +482,7 @@ private func closestIntersection(_ intersections: [(Int, Intersection, Bool)], t
   }
 }
 
-
-private func angle(start: Point, middle: Point, end: Point) -> Double {
+private func calculateAngle(start: Point, middle: Point, end: Point) -> Double {
   let v1 = Point(x: start.x - middle.x, y: start.y - middle.y)
   let v2 = Point(x: end.x - middle.x, y: end.y - middle.y)
   let arg1 = v1.x * v2.y - v1.y * v2.x

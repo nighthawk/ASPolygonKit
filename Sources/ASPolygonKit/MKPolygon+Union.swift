@@ -27,7 +27,7 @@ extension Polygon {
   }
   
   public static func union(_ polygons: [Polygon], with polygon: Polygon) throws -> [Polygon] {
-    var grower = polygon
+    var grower = polygon.clockwise()
     var newArray: [Polygon] = []
     
     for existing in polygons {
@@ -35,14 +35,15 @@ extension Polygon {
         grower = existing
         continue
       }
-      let intersections = grower.intersections(existing)
+      let clockwise = existing.clockwise()
+      let intersections = grower.intersections(clockwise)
       if intersections.count > 0 {
-        let merged = try grower.union(existing, with: intersections)
+        let merged = try grower.union(clockwise, with: intersections)
         if !merged {
-          newArray.append(existing)
+          newArray.append(clockwise)
         }
       } else {
-        newArray.append(existing)
+        newArray.append(clockwise)
       }
     }
     

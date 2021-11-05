@@ -101,11 +101,13 @@ public struct Polygon {
   #endif
   
   public func isClockwise() -> Bool {
-    var points = self.points
+    var points: [Point] = self.points
     if let first = points.first, first != points.last {
       points.append(first)
     }
-    let signedArea = zip(points, Array(points[1...] + [points[0]])).reduce(0) { area, pair in
+    
+    let offsetPoints: [Point] = Array(points[1...] + [points[0]])
+    let signedArea: Double = zip(points, offsetPoints).reduce(0) { area, pair in
       area + pair.0.x * pair.1.y - pair.1.x * pair.0.y
     }
     // Note: Actual area is `signedArea / 2`, but we just care about sign

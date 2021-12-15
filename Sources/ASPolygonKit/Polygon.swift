@@ -188,7 +188,12 @@ public struct Polygon {
     return count
   }
   
-  func contains(_ point: Point, onLine: Bool) -> Bool {
+  /// Check if the polygon contains a point
+  /// - Parameters:
+  ///   - point: The point to check
+  ///   - onLine: `true` if the contains check should succeed when the point is right on the edge of the polygon
+  /// - Returns: Whether the polygon contains the point
+  public func contains(_ point: Point, onLine: Bool) -> Bool {
     if onLine {
       for link in firstLink {
         if link.line.contains(point) {
@@ -201,7 +206,10 @@ public struct Polygon {
     return numberOfIntersections(ray) % 2 == 1
   }
   
-  func contains(_ polygon: Polygon) -> Bool {
+  /// Checks if the polygon contains the provided polygon
+  /// - Parameter polygon: The polygon to check for containment
+  /// - Returns: Whether `self` contains `polygon`, ignoring interior polygons of either
+  public func contains(_ polygon: Polygon) -> Bool {
     for point in polygon.points {
       if !contains(point, onLine: false) {
         return false

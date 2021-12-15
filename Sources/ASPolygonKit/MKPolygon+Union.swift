@@ -144,6 +144,7 @@ extension Line {
 }
 
 extension Polygon {
+  /// Creates a new polygon from an `MKPolygon`, ignoring interior polygons
   public init(_ polygon: MKPolygon) {
     let count = polygon.pointCount
     var coordinates = [CLLocationCoordinate2D](repeating: kCLLocationCoordinate2DInvalid, count: count)
@@ -156,7 +157,8 @@ extension Polygon {
     firstLink = Polygon.firstLink(for: points)
   }
   
-  var polygon: MKPolygon {
+  /// The polygon as an `MKPolygon`, ignoring interior polygons
+  public var polygon: MKPolygon {
     var coordinates = points.map { point in
       point.coordinate
     }

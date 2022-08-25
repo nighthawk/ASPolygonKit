@@ -344,11 +344,11 @@ public struct Polygon {
     }
     
     #if DEBUG
-    let stepsGeoJSON: [String: Any] = [
-      "type": "FeatureCollection",
-      "features": steps.flatMap { $0.toGeoJSON(startOnly: false) }
-    ]
-    print(String(decoding: try JSONSerialization.data(withJSONObject: stepsGeoJSON, options: []), as: UTF8.self))
+//    let stepsGeoJSON: [String: Any] = [
+//      "type": "FeatureCollection",
+//      "features": steps.flatMap { $0.toGeoJSON(startOnly: false) }
+//    ]
+//    print(String(decoding: try JSONSerialization.data(withJSONObject: stepsGeoJSON, options: []), as: UTF8.self))
     #endif
     
     return true

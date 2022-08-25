@@ -147,6 +147,25 @@ class ASPolygonKitTests: XCTestCase {
       """)
   }
   
+  func testBelgium() throws {
+    // Useful for debugging:
+    // `po String(decoding: try JSONSerialization.data(withJSONObject: startLink.line.geoJSON, options: []), as: UTF8.self)`
+    
+    let polygons = [
+      "sjaxHiuiXklJauNygDzpCwKmqW|xBwkJuvRv_CwdDo`^zvAgvChqFnpAzs@wyP}~Ns`YphC{_OleKpd@glDuqM_|B{zPegBkiCdaBkyHvcGsxDzqFruEhxGqhJvfEqs@qp@_`JrqBijHdiFdiBbQ}bTehAkb@neAwcM_dBasCatBkmGx[yiEdvDimGhlGe_@r{CaoPriA_\\eSecP|[krEtxDyJmrAaiG|oD{vFp|C`uHfuAoyCl}GxdG}YxqBtoDxcBj_@ikBv{EzuAtyC`}E~{@qnEjuGjkEbpEr}Hzk@d}DhpHm|@piAutF|kDwg@jfFrlC?hdjHsziB???",
+      "w|xtHugo\\byrB?rxPl}XzqNf`@xiHzla@hlAvtL}}Ap`SwyA~jFhlAbcUm~CtjJo}Fnc@y{D}_DexBwfL{mFdaEmmCgBzPxsGqg@bcDuvNeuCerGakL}|AzyEj`B~eBjKpxDsoI|mJieGxnI`fDr`YyaCj~FnDxgFuLprLldFvu@bu@vnCehDrsFw_GvbBawOtWyzErbG`_@nyTyyApV{}Bm{BsfAdmFf}ClgD~cBpoMgfEdeOecA|dBk_Ol{BeqHlxCmwAu~BqzDnr@_PvuF_zAn~Ak}AtW{vBz|A?icdI??",
+      "_{nxHa`{QoiBcmt@raGe~B|yJjKh|Dq|HwCshPiqF`{@m|BkmMp~De~Yh}AguLdgH_Ne`AygPbIw`Gtl@y}@ouBgsGmfAo~DdEclFwlHoiU|wiB??dz_EyiFt{InuAxnFnXh{JvtCh{Ln{Dr~A~rC`cEm{A|aC|LxcBwnBliC|^jfD_gAjdEi}NfwNq_@n}MitFh`FoiAopAoyIfyBkkDyyEslGfgCgSvqBo}A~eBecAe_@{mHtrA{iCdwBglt@_bkB??",
+      "}qcpHazj\\oyL_]{}DayBy_G}jG_kAfh@}RjvFiUlpAkytB??ayiDw_@c}AuPmdDecCk}EvdD{~F_pA}fMllBqfEmk@akFf`@uvKtv@ihCnxBgQra@_gM|gJ}bInBgfDlbBe_AxDe|H|mBixDlqLdhHrqD`}Et|Dw_CmQotKvjA_lKhbExXxc@wyDfzD{i@pyHb`E~eDmzHvhDyv@heCjdIytB|eFfzExcFvq@eb@pnAptA~n@nmIf}B`fDle@l~Bv~Cgy@vfDoYbfAhlGvgDem@tuAvnCkx@riDuiD_\\a\\`pDzqAb^|UnoGizCroBf]hlGnaG|Z`wAfaKlaFf`BteBrbCbnDu[`fDjrGdoB_xBf~CrvDhnA`jF|}EzpBr_BfvBbtCq~GzrBx}Cb_Kvv@an@ujD~nIqmHbmC_NmImdEnqB}pCd~DneBppActFbpDjSzgDfsDjiFd_@~eC|lEpo@h}CzXv_Fde@~qMak@~uLrvFrbD_tBjmGngDloR{wCv|CknLdpBmoEfzJljAt{IapCdaByrCi~CqbDllHo~@lqWyfJnvJeoGdgTb{@dgKqd@jyKw{FscBwtEjsCa~CgvDu`Dcb@wdDncFe|AdeIs{C_N_oA}pC??"
+    ].map(Polygon.init(encoded:))
+
+    let merged = try Polygon.union(polygons)
+    XCTAssertEqual(1, merged.count)
+    
+    XCTAssertEqual(merged.first?.encodeCoordinates(), """
+      sjaxHiuiXklJauNygDzpCwKmqW|xBwkJuvRv_CwdDo`^zvAgvChqFnpAzs@wyP}~Ns`YphC{_OleKpd@glDuqM_|B{zPegBkiCdaBkyHvcGsxDzqFruEhxGqhJvfEqs@qp@_`JrqBijHdiFdiBbQ}bTehAkb@neAwcM_dBasCatBkmGx[yiEdvDimGhlGe_@r{CaoPriA_\\eSecP|[krEtxDyJmrAaiG|oD{vFp|C`uHfuAoyCl}GxdG}YxqBtoDxcBj_@ikBv{EzuAtyC`}E~{@qnEjuGjkEbpEr}Hzk@d}DhpHm|@piAutF|kDwg@rxC`}A?{Zw_@c}AuPmdDecCk}EvdD{~F_pA}fMllBqfEmk@akFf`@uvKtv@ihCnxBgQra@_gM|gJ}bInBgfDlbBe_AxDe|H|mBixDlqLdhHrqD`}Et|Dw_CmQotKvjA_lKhbExXxc@wyDfzD{i@pyHb`E~eDmzHvhDyv@heCjdIytB|eFfzExcFvq@eb@pnAptA~n@nmIf}B`fDle@l~Bv~Cgy@vfDoYbfAhlGvgDem@tuAvnCkx@riDuiD_\\a\\`pDzqAb^|UnoGizCroBf]hlGnaG|Z`wAfaKlaFf`BteBrbCbnDu[`fDjrGdoB_xBf~CrvDhnA`jF|}EzpBr_BfvBbtCq~GzrBx}Cb_Kvv@an@ujD~nIqmHbmC_NmImdEnqB}pCd~DneBppActFbpDjSzgDfsDjiFd_@~eC|lEpo@h}CzXv_Fde@~qMak@~uLrvFrbD_tBjmGngDloR{wCv|CknLdpBmoEfzJljAt{IapCdaByrCi~CqbDllHo~@lqWyfJnvJeoGdgTb{@dgKqd@jyKw{FscBwtEjsCa~CgvDu`Dcb@wdDncFe|AdeIs{C_N_oA}pCoyL_]{}DayBy_G}jG_kAfh@}RjvFiUlpAk@?vyNvaVzqNf`@xiHzla@hlAvtL}}Ap`SwyA~jFhlAbcUm~CtjJo}Fnc@y{D}_DexBwfL{mFdaEmmCgBzPxsGqg@bcDuvNeuCerGakL}|AzyEj`B~eBjKpxDsoI|mJieGxnI`fDr`YyaCj~FnDxgFuLprLldFvu@bu@vnCehDrsFw_GvbBawOtWyzErbG`_@nyTyyApV{}Bm{BsfAdmFf}ClgD~cBpoMgfEdeOecA|dBk_Ol{BeqHlxCmwAu~BqzDnr@_PvuF_zAn~Ak}AtWci@~_@?vFyiFt{InuAxnFnXh{JvtCh{Ln{Dr~A~rC`cEm{A|aC|LxcBwnBliC|^jfD_gAjdEi}NfwNq_@n}MitFh`FoiAopAoyIfyBkkDyyEslGfgCgSvqBo}A~eBecAe_@{mHtrA{iCdwBglt@_bkBoiBcmt@raGe~B|yJjKh|Dq|HwCshPiqF`{@m|BkmMp~De~Yh}AguLdgH_Ne`AygPbIw`Gtl@y}@ouBgsGmfAo~DdEclF{dGckRqi@?
+      """)
+  }
+  
   func testInvariantToShuffling() throws {
     let polygons = try polygonsFromJSON(named: "polygons-uk-170217")
     XCTAssertEqual(19, polygons.count)

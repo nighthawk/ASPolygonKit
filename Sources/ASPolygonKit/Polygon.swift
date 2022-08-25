@@ -129,13 +129,15 @@ public struct Polygon {
     for (index, point) in points.enumerated() {
       let nextIndex = (index == points.endIndex - 1) ? points.startIndex : index + 1
       let next = points[nextIndex]
-      let line = Line(start: point, end: next)
-      let link = LinkedLine(line: line, next: nil)
-      if first == nil {
-        first = link
+      if next != point {
+        let line = Line(start: point, end: next)
+        let link = LinkedLine(line: line, next: nil)
+        if first == nil {
+          first = link
+        }
+        previous?.next = link
+        previous = link
       }
-      previous?.next = link
-      previous = link
     }
     return first!
   }
@@ -337,6 +339,18 @@ public struct Polygon {
     
     assert(newPoints.count > 2, "Should never end up with a line (or less) after merging")
     points = newPoints
+    if points.first != points.last, let first = points.first {
+      points.append(first)
+    }
+    
+    #if DEBUG
+    let stepsGeoJSON: [String: Any] = [
+      "type": "FeatureCollection",
+      "features": steps.flatMap { $0.toGeoJSON(startOnly: false) }
+    ]
+    print(String(decoding: try JSONSerialization.data(withJSONObject: stepsGeoJSON, options: []), as: UTF8.self))
+    #endif
+    
     return true
   }
   
@@ -479,8 +493,7 @@ private func closestIntersection(_ intersections: [(Int, Intersection, Bool)], t
     return intersections.first
   } else {
     // the closest is the one with the least distance from the points to the intersection
-    return intersections.reduce(nil) {
-      prior, entry in
+    return intersections.reduce(nil) { prior, entry in
       if prior == nil || entry.1.point.distance(from: point) < prior!.1.point.distance(from: point) {
         return entry
       } else {

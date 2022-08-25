@@ -58,6 +58,8 @@ public struct Line: Hashable {
   let b: Double
   
   public init(start: Point, end: Point) {
+    assert(start != end)
+    
     self.start = start
     self.end = end
     

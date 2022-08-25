@@ -31,7 +31,7 @@ class ASPolygonKitTests: XCTestCase {
     XCTAssertEqual(1, merged.count)
     
     XCTAssertEqual(merged.first?.encodeCoordinates(), """
-      iobcHyvps@j~cAoquEhgj@jWA{AxzAnCzgD~A@hDlpb@`w@_JehAjVoheDb{xCucAjqlBtpmHo`^`zyBtrAlvzA~|IfwsArvX?{iv@htlIuj`ChvB?~P{MqPcaRpP?saVk`aDyn~DeiXoy{D`gC?
+      iobcHyvps@j~cAoquEhgj@jWA{AxzAnCzgD~A@hDlpb@`w@_JehAjVoheDb{xCucAjqlBtpmHo`^`zyBtrAlvzA~|IfwsArvX?{iv@htlIuj`ChvB?~P{MqPcaRpP?saVk`aDyn~DeiXoy{D`gC?mtg@s}xC
       """)
   }
   
@@ -43,7 +43,7 @@ class ASPolygonKitTests: XCTestCase {
     XCTAssertEqual(1, merged.count)
     
     XCTAssertEqual(merged.first?.encodeCoordinates(), """
-      _aisJ~nyo@?_oyo@~nh\\??`f{@nyo@lblH~tAboL~|bKs_kN?nh\\npxD??ovmHnxtI??~s`BnnqC??~m|Qn}}B??~hsXoezG??_ry@_ulL??_ulLo{vA??~dtBoljB??~{|FkkmCrkt@zoJz|x@i_@vaAxzbCgjiAnfrB??~qy@ntfG??ppHnaoA|z`BnpxDnl{U?~hbE_c{X??cro[_msCznqH?fdS
+      _aisJ~nyo@?_oyo@~nh\\??`f{@nyo@lblH~tAboL~|bKs_kN?nh\\npxD??ovmHnxtI??~s`BnnqC??~m|Qn}}B??~hsXoezG??_ry@_ulL??_ulLo{vA??~dtBoljB??~{|FkkmCrkt@zoJz|x@i_@vaAxzbCgjiAnfrB??~qy@ntfG??ppHnaoA|z`BnpxDnl{U?~hbE_c{X??cro[_msCznqH?fdS_oh\\?
       """)
   }
 
@@ -55,7 +55,7 @@ class ASPolygonKitTests: XCTestCase {
     XCTAssertEqual(1, merged.count)
     
     XCTAssertEqual(merged.first?.encodeCoordinates(), """
-      {musLul~eCzizB}w|z@lxrGr|uD|diB~_uJd~zF{{_F|lq[cngJn`wFncpJyPvl@xdiGvtyK~yxA~olG||]l`nW`I`DiA~}DhA~y@aBi@w~E`k|P`{x@ubiA`z_G??j`mArwrFz|H?vqvE`bgClhtGnkuCnsqHnyo@~tiP_t`Boh\\odkA~wq@_{m@~tu@qrqB|juA?|ypAwapFzcn@hFf~|@_osCkF_}BcoDj|Ll_dEbiSnkkBfv{Ct~MlbLlxx\\{ftK_mEwdvD|x{@?tEcG_Cq_Cti@?}hBcv{Fsj{BempDyloH|VmfDanw^_jug@bRcxB
+      {musLul~eCzizB}w|z@lxrGr|uD|diB~_uJd~zF{{_F|lq[cngJn`wFncpJyPvl@xdiGvtyK~yxA~olG||]l`nW`I`DiA~}DhA~y@aBi@w~E`k|P`{x@ubiA`z_G??j`mArwrFz|H?vqvE`bgClhtGnkuCnsqHnyo@~tiP_t`Boh\\odkA~wq@_{m@~tu@qrqB|juA?|ypAwapFzcn@hFf~|@_osCkF_}BcoDj|Ll_dEbiSnkkBfv{Ct~MlbLlxx\\{ftK_mEwdvD|x{@?tEcG_Cq_Cti@?}hBcv{Fsj{BempDyloH|VmfDanw^_jug@bRcxB}tuRshjv@
       """)
   }
   
@@ -67,7 +67,7 @@ class ASPolygonKitTests: XCTestCase {
     XCTAssertEqual(1, merged.count)
     
     XCTAssertEqual(merged.first?.encodeCoordinates(), """
-      ~ghgCai|h[ykhBmhuOprjAecdOfjpc@nbq@w@yBxd@w|C|fkB}hRxwzLzbyAx`bF~j{AjBjcMnrzQ??vtyK`udMhq`Bw{DbbNh`_IjqqGyKns|Mwr~BfgaFbcMpsY}~t@`ym@~{xBfl~A`J~`gRovq]?`qd@eeqBctKww\\eMkb_AlpPq~j@rn^o_d@z_k@q|H~ab@_bOaoh@iyYbMirVpeTapJlrGwvn@vcVqpo@|vc@hhCj~d@apJd~@}re@daYewB`zi@mhtAzil@wr{@xkZghNttc@yn}@w_m@mu[{oJ}oU?inX{@?ym@wkcAzzXuyiArbMykx@sbM_`~@~aW}xeA}yJcyd@c}Ij}Hw|zHswg@do@mcxLuu~K?j}@reeGeunRg`]kButH
+      ~ghgCai|h[ykhBmhuOprjAecdOfjpc@nbq@w@yBxd@w|C|fkB}hRxwzLzbyAx`bF~j{AjBjcMnrzQ??vtyK`udMhq`Bw{DbbNh`_IjqqGyKns|Mwr~BfgaFbcMpsY}~t@`ym@~{xBfl~A`J~`gRovq]?`qd@eeqBctKww\\eMkb_AlpPq~j@rn^o_d@z_k@q|H~ab@_bOaoh@iyYbMirVpeTapJlrGwvn@vcVqpo@|vc@hhCj~d@apJd~@}re@daYewB`zi@mhtAzil@wr{@xkZghNttc@yn}@w_m@mu[{oJ}oU?inX{@?ym@wkcAzzXuyiArbMykx@sbM_`~@~aW}xeA}yJcyd@c}Ij}Hw|zHswg@do@mcxLuu~K?j}@reeGeunRg`]kButH_sug@wqK
       """)
   }
   
@@ -81,7 +81,7 @@ class ASPolygonKitTests: XCTestCase {
     XCTAssertEqual(1, merged.count)
     
     XCTAssertEqual(merged.first?.encodeCoordinates(), """
-      cuq_Hwgcn@?_beJhqv@ovaAhdJljAl`CkxOn|iAa~PgfAtm|Ve`ErfGqpTsv_@?evzG
+      cuq_Hwgcn@?_beJhqv@ovaAhdJljAl`CkxOn|iAa~PgfAtm|Ve`ErfGqpTsv_@?evzGq{rB?
       """)
   }
 
@@ -96,7 +96,7 @@ class ASPolygonKitTests: XCTestCase {
       XCTAssertEqual(1, merged.count)
       
       XCTAssertEqual(merged.first?.encodeCoordinates(), """
-        _j_tHqf}l@ea{Av{ZkxlAu|_Dszz@wwdG`uQcz`IpmdEh`yBx}@tmzB~sbExezBbUrwoCt|MtwfAskkExszA
+        _j_tHqf}l@ea{Av{ZkxlAu|_Dszz@wwdG`uQcz`IpmdEh`yBx}@tmzB~sbExezBbUrwoCt|MtwfAskkExszApvCzvf@
         """)
 
 //    } catch PolygonUnionError.polygonTooComplex(let steps) {
@@ -131,7 +131,7 @@ class ASPolygonKitTests: XCTestCase {
     XCTAssertEqual(1, merged.count)
     
     XCTAssertEqual(merged.first?.encodeCoordinates(), """
-      e`tbH{s{s@{azEytvLha|AqznAqiM}qe@hv}CatiCpgr@zr`LwhA`bB??giAziBkdDfuC
+      e`tbH{s{s@{azEytvLha|AqznAqiM}qe@hv}CatiCpgr@zr`LwhA`bB??giAziBkdDfuCkzz@h`kG
       """)
   }
   
@@ -143,7 +143,7 @@ class ASPolygonKitTests: XCTestCase {
     XCTAssertEqual(merged.count, 1)
     
     XCTAssertEqual(merged.first?.encodeCoordinates(), """
-      gz|lIskyp@s|oAsah@bzHe`QbeLkxThiPuxJzH{hF`~BmiIk[ylDfUuaBkeAefCe@ooGxr@{cBiu@kuDdj@mhOxvCgwNjFa~P~aD__VjtBflA~qBoaApf@cdOo~Cc`E{n@abAcVsnElzAo|Byg@m_GwpIm`Xd_AyxE`}Cdn@h}D{iW`y@ukl@hr@}pq@byZgwe@n_QwlvDt_k@oxy@chlBmqcKzw}Dw_mBdiB|aCjwHyv@ttAxU~kQowH`yAg`@baAbSh`C}QruCcwA`}G_NrtBqhEblIrg@vgEoUneDe|@f|@sjDxmFwXxBurAz_Ise@`mIuyD~yDst@trGoc@g@ihC`uBucAvkJhxHjuCtwE~cFefChaPhqEpwIhbQrxGrgVr_N_fB@dd@`i@bKbfDz{DtfB}i@tm@gfOnuFcpJzvCwcMpjQwgWjtGqgVdhHqjI|rFdrDxdFowDzpHjkHzcD~sHvpXmkHreGe_Wx_OnTdvGjfDfuCcgHhrDmdEtiH|rCZmG~|@rf@@???blDpmBrf@rqA~wB}uAneB`NnpF~qC`uAjzBbjJlzNpnEojI~mFm{BpcFqpAxsDecJfaEadC|wI{w@toGjhItuAchBviBa@lv@e~KfgD}~IxiA_`P`iGe~EtsEj_AzkEqnBvzEhCd~HgrJpsGdPb{InwDn}KztAlaH|sBx`D`xAjbFr{Cf~FhyB`^byA`pDrt@t~FbvHruAbqD~vAucA`fJldEmDxpNsuF|oU{rLquEbcBrzIwjApuEqtKmbFwrAhvIqvDlyNd`B~lEmnDhiThrGx{Dbb@itJ~fEdn@xmBcsOdvHl{BxjAvnZjyCdwBxdJrne@o_@dlLn~B|nD{\\~lE~{GdPflC|zKnj@~vXrr@ls\\`yJdwBnjHlpLwr@p|H}mEnwDj~IhxHvpAbgHk|BzyErhP`gHjOhi_@teKflAf_FbsO{iIleVzoC`{@sf@`pJfyFvoHiyA|aOreBtmThbChhCpaBa]dfAdhB}c@fjBtfBj|B??rfAhkAj@rxDpgDoFdwCtcGdcEsWds@hfDpjKqGwLhxH{xCv}CqpCa{@wnDbgHgrBytAmO|uGa}H~cClZ~uGvjFsnBdhChoFjfA}uGreFwdGxyDqwDljIhhChjFcsOxvBhhCdN_kFroCgkGfbBihCv^gbEtfA_fBhRibEfqC_~J~_Fx}ChoCqeQj|O`wM~~GfjB~nDxrMftHobFpsBsnNnbL_hAj@a`EjyLasCdjB{xFmY{dArlRslCtcDgoQjhG}gAp_CkfD|ZoeKewBzi@~kBacUh`GmpLxrYsd]djDre@roCcvHizAqmHftMsvVvjLuaB|wEmpLs`CucAkXeaKhsD}eMj`LsqGcl@kvIb|JeaKbtJeeIbfG|nD`bBvaB~hAauEtzA|S_Pv_C|dCse@`qBre@pu@_z@fyC}ZrvAhyBv~AfB|eBha@bOtkAn`BjrB`Nbh@ibAru@noEng@ruCzaCoxCrrLixE|zKlgAh{AqfDrgKdvDbiGyK|nD`cGchBvuIthEviBchB`fLjdEddIplNt_E|rNqGnnM``BliIdPjkHbhCfaKzhGxkJvg@|nDrVpwJrnF`pDznFvmIx~AvoDvgB`Z`qJ{nOtzL{tMzdAiqBrkR}|M`yHtoHfhBnjCd~Ae_@dxBrt@vcCfsDnkAcnKcnBwuFpbBsdF~zCyjEpyCka@xlDctCdaEpcFruBsG~iH`sCpiHmT||EbvHyq@vfFw`JzzVweC~eBcIh`FsuC`bDiqBmTgxDabDw`EfxHsxAen@_gBxrM~lA|lEgSf|FlpFv}Cl@j|Gnt@`dChCl{BgeD`kF_kDddDwlB`]pkAptKggAzwFtn@dmFdtAnjC{cCjuDw_Hq}BppDfbEdtAxqHbqIuhEncFal@nk@`sFk]j~FmQvgTw{@rlCh~BtrXzoBzpCgp@bfNhStlO|[zvL~vC`uBnkCaNvxBjwCh}@xiKud@vcM~lD`kF`mDyuFvqAvaB{Q~xL|hBpmHt~D`l@dY`~Pu~EeuChjE`|Qlp@pqRugAzpNemE{rB{oF~qIuaAqGz^fzG{uB~eBwoEwhE`v@|eMnj@jmGcjCrjD{^bgHqqAzaC_v@jjNxyDdwB}NbvH{^`zFsnApuE~aJbjAjPoyC``C}i@rhF{i@zhDh~FrtD_Na\\~tBdcFzqHbiDzpCtzAvpBlvEtuQuZthEfi@vuFumEwX{dAqfEszAbjAaiIiqE_\\bgH`yAzK~^bqDyt@|_DrgChhCasHljC}^|x@_|@`]ecBgqEwhA`bB??giAziBkdDfuC~[vfFmqCzrB_\\wXyhBjxCsqAzKtd@~gG}jB`|E`uBvXshCnbL}dCal@cfBtAok@nfBpA`lCneA`_B~jAps@xpAha@fc@dn@fdChCjjA|{g@k`Sr~Vc_Fx|i@lMvpBwmAxqB|Fj}Amb@bbDsi@pzCap@bnKdtAzfGr~@njC`zAfaKas@vnCatBha@mt@jhCg{BoTkt@pwDetAzaCdm@vpB`jA}_DhdAst@p_Cvv@n@dwBy_BthEmZ`kFeuCyeAoRvsAu`A~j@gr@aN{z@st@kZ{cB}_A|aCxu@pnBwQf}@ooBhp@ofAxjAm\\jz@|pB{Kx`CdfC}q@|hBudC~dAaaB_NeFdmFzpByeAbgAneKm@pwDfiDpfEfkBhCfrCxqHvrA_fBbjAnaAddBowD_Lw_C~_Am{BjCoqFitArVggAe|Fxk@sqAeu@{~Cr\\g{ApxAewBzyB`]|[nyC|lBkp@prCtjDcIjuDgaCePitApuE~oAztAfdBrqGh`@oyCdc@oaA|eAre@hwAb}KijAfbEndAbjAsWfaKweBlsEseCbPmZh`F~bAxlDmaBzcBfaCthEfjAdpExQdcDzjBl`Alj@btCuq@dkAhwArbGi`@toHsOjzBfzAtt@kXdmFapAnaAodAsVaeB~eBoEt~Bbk@r{Cwa@liClaBzi@hwAv_CbpAhlGhjApkIoEvkDqyAzoCkgAfjBiu@}LdAiyBan@ylDy{@l`A}h@lE}NhjBdoBhcEiKdaBg{@~~BwrAiU_jJlpLy{F|gA{cN}vAefR{{D}jJs{C_fGazF{qIdeI_fIbP}`Gk_A_qF{pC{rJaaJcbPakFyjCsqG{nJxv@mdJoyCoeHcyAc|BeoEmiFuIwoEvg@{`KooGynN}`UiqDwX_fGelLc^sqGmjN_tHqyLkjLI\\wGuHMM?AiqAgzA_bCvnTu{F`mQ~J|dBqIjb@}p@d_@qoBdaEnaBrnBsj@rjDzbBrlCsqDprLr~AruE`KdmNhSrQkgG|_[euGfkGe|H|aOtgEt`H`aFb}KuRpsQ{]x`IyeChxHb_DjfDt`@vfF{aNduCyfBdcJuxA|nDft@~lEai@|wFbfEijBzkEf|Fm~AliIfQfzGqyD~jFytBihCucAbPzd@|_DasGdmFedDb{@sqA|}DgtIzxKqmCkfD{xEjkHaiBwXahGdxSrrAh_LakPnaA{sAslCyhBr{C{lCcwBg`FwmIkoEdPo{HycMweMk_A_gAwv@ey@fxH|E|_Dgr@b`EitDp~GxtAbyAeChhCqxCbjAokFr_NcmDpnBu|B_Nc`@pdFwrHtqGuxJfsDsnJchBe}C_wA_lAdn@yjDuaBgRwfFw~BqGkqAl{BedCk_AqHm{Bi|A}gAub@waB{zAa_KqhBzK{~DadCo^qfEprAihCeiBo~GwnGhlMklLssFc{@x{DczD|i@su@fdDzTjjNmaDdmFw`GlyCm|J{lPyEvrMciRjqKjUvmO{jJre@oqCdeIc}BqpAln@wnCmn@g{A_yBj_A}nAe_@qmA_vGlp@qbAmqBmoA{nAlr@{eB`N{eB}gA{MnfE{d@cAm_@dmFm_CvIw\\`jAuwC{aCrWnjIsn@`xAvnA`kIef@`qAkcCk}AsjAzpCqcAlk@`@bUwzAaNkyA~gAqhC}mJdaEmsE_nCglAeiEuqGyMw_CctFerJexBawMatBrbGzt@p_BlLduCq`BtaBycGd_@cQ}eBofB~hA}cF_cIc_JkjHmT_fB_iCc~EayCf}@gs@wXaWbyAqyIcjAwgJ`l@opBjfDotE~qCkx@zaCugBflA}~AviEsoAhCwtEctCc~Br|NmfF~y@e|@e|@ieBteFkBf}FisAfn@igBkpFoc@fRmy@cPoYloAunAe_@qpApwD}gA|[ceBumCvd@}}Ds~@efCc^miCsyB_aDb_B}fGbb@ecJcyAiC{RztAeZxh@k~A`l@oY`iA}HxtAqKb|@km@m`AcXip@fNor@ah@wzDh`BubG`b@dP|Jvu@tp@}fA`j@omB{RupBfJctCkk@waBhq@mvDb}Awg@|Bu`Hx_BehBzVoyCwgBgRsz@~tBucBut@z_Ag_Lhy@g{AueEo_M_GurAgdEkgX|cBsdFpUsGwjDglJuh@ut@csCsWy{@oeEiwBhRi@hyBqj@lEwgEteLys@vmIgkBbAckBwv@mr@q~GejAwXcm@k_Ac`Cal@iBcdOoeAerDuyCkq@ewA}_Dyi@uH{]axG}oDmxCyfBqs@uTs}B`PgxBggAgnFkrArgBeNzNcNbq@oaBrcAqyA`N}rKuqGqkG~gAsRbwBeiDxlDuzE~tBldEzyEaaBr`Sis@lTqEhlMg{Dv{O}`Fse@wfCr}BkgBePjZakF}kA{i@wJ}pC{zBboEmhDal@kt@p_BceC_uB_dAugK}BoiUxkA}hFkt@{wFvoA{gLoi_@qnBe`EwnCi|A`l@gwPuuQmsKgsDitRnaAs_BfuCgjMakFy_U~tB_h@lgU}bA~pOqm_@j`RedJnyq@{eLd|FomCpnBeceB{dgF?A
+      gz|lIskyp@s|oAsah@bzHe`QbeLkxThiPuxJzH{hF`~BmiIk[ylDfUuaBkeAefCe@ooGxr@{cBiu@kuDdj@mhOxvCgwNjFa~P~aD__VjtBflA~qBoaApf@cdOo~Cc`E{n@abAcVsnElzAo|Byg@m_GwpIm`Xd_AyxE`}Cdn@h}D{iW`y@ukl@hr@}pq@byZgwe@n_QwlvDt_k@oxy@chlBmqcKzw}Dw_mBdiB|aCjwHyv@ttAxU~kQowH`yAg`@baAbSh`C}QruCcwA`}G_NrtBqhEblIrg@vgEoUneDe|@f|@sjDxmFwXxBurAz_Ise@`mIuyD~yDst@trGoc@g@ihC`uBucAvkJhxHjuCtwE~cFefChaPhqEpwIhbQrxGrgVr_N_fB@dd@`i@bKbfDz{DtfB}i@tm@gfOnuFcpJzvCwcMpjQwgWjtGqgVdhHqjI|rFdrDxdFowDzpHjkHzcD~sHvpXmkHreGe_Wx_OnTdvGjfDfuCcgHhrDmdEtiH|rCZmG~|@rf@@???blDpmBrf@rqA~wB}uAneB`NnpF~qC`uAjzBbjJlzNpnEojI~mFm{BpcFqpAxsDecJfaEadC|wI{w@toGjhItuAchBviBa@lv@e~KfgD}~IxiA_`P`iGe~EtsEj_AzkEqnBvzEhCd~HgrJpsGdPb{InwDn}KztAlaH|sBx`D`xAjbFr{Cf~FhyB`^byA`pDrt@t~FbvHruAbqD~vAucA`fJldEmDxpNsuF|oU{rLquEbcBrzIwjApuEqtKmbFwrAhvIqvDlyNd`B~lEmnDhiThrGx{Dbb@itJ~fEdn@xmBcsOdvHl{BxjAvnZjyCdwBxdJrne@o_@dlLn~B|nD{\\~lE~{GdPflC|zKnj@~vXrr@ls\\`yJdwBnjHlpLwr@p|H}mEnwDj~IhxHvpAbgHk|BzyErhP`gHjOhi_@teKflAf_FbsO{iIleVzoC`{@sf@`pJfyFvoHiyA|aOreBtmThbChhCpaBa]dfAdhB}c@fjBtfBj|B??rfAhkAj@rxDpgDoFdwCtcGdcEsWds@hfDpjKqGwLhxH{xCv}CqpCa{@wnDbgHgrBytAmO|uGa}H~cClZ~uGvjFsnBdhChoFjfA}uGreFwdGxyDqwDljIhhChjFcsOxvBhhCdN_kFroCgkGfbBihCv^gbEtfA_fBhRibEfqC_~J~_Fx}ChoCqeQj|O`wM~~GfjB~nDxrMftHobFpsBsnNnbL_hAj@a`EjyLasCdjB{xFmY{dArlRslCtcDgoQjhG}gAp_CkfD|ZoeKewBzi@~kBacUh`GmpLxrYsd]djDre@roCcvHizAqmHftMsvVvjLuaB|wEmpLs`CucAkXeaKhsD}eMj`LsqGcl@kvIb|JeaKbtJeeIbfG|nD`bBvaB~hAauEtzA|S_Pv_C|dCse@`qBre@pu@_z@fyC}ZrvAhyBv~AfB|eBha@bOtkAn`BjrB`Nbh@ibAru@noEng@ruCzaCoxCrrLixE|zKlgAh{AqfDrgKdvDbiGyK|nD`cGchBvuIthEviBchB`fLjdEddIplNt_E|rNqGnnM``BliIdPjkHbhCfaKzhGxkJvg@|nDrVpwJrnF`pDznFvmIx~AvoDvgB`Z`qJ{nOtzL{tMzdAiqBrkR}|M`yHtoHfhBnjCd~Ae_@dxBrt@vcCfsDnkAcnKcnBwuFpbBsdF~zCyjEpyCka@xlDctCdaEpcFruBsG~iH`sCpiHmT||EbvHyq@vfFw`JzzVweC~eBcIh`FsuC`bDiqBmTgxDabDw`EfxHsxAen@_gBxrM~lA|lEgSf|FlpFv}Cl@j|Gnt@`dChCl{BgeD`kF_kDddDwlB`]pkAptKggAzwFtn@dmFdtAnjC{cCjuDw_Hq}BppDfbEdtAxqHbqIuhEncFal@nk@`sFk]j~FmQvgTw{@rlCh~BtrXzoBzpCgp@bfNhStlO|[zvL~vC`uBnkCaNvxBjwCh}@xiKud@vcM~lD`kF`mDyuFvqAvaB{Q~xL|hBpmHt~D`l@dY`~Pu~EeuChjE`|Qlp@pqRugAzpNemE{rB{oF~qIuaAqGz^fzG{uB~eBwoEwhE`v@|eMnj@jmGcjCrjD{^bgHqqAzaC_v@jjNxyDdwB}NbvH{^`zFsnApuE~aJbjAjPoyC``C}i@rhF{i@zhDh~FrtD_Na\\~tBdcFzqHbiDzpCtzAvpBlvEtuQuZthEfi@vuFumEwX{dAqfEszAbjAaiIiqE_\\bgH`yAzK~^bqDyt@|_DrgChhCasHljC}^|x@_|@`]ecBgqEwhA`bB??giAziBkdDfuC~[vfFmqCzrB_\\wXyhBjxCsqAzKtd@~gG}jB`|E`uBvXshCnbL}dCal@cfBtAok@nfBpA`lCneA`_B~jAps@xpAha@fc@dn@fdChCjjA|{g@k`Sr~Vc_Fx|i@lMvpBwmAxqB|Fj}Amb@bbDsi@pzCap@bnKdtAzfGr~@njC`zAfaKas@vnCatBha@mt@jhCg{BoTkt@pwDetAzaCdm@vpB`jA}_DhdAst@p_Cvv@n@dwBy_BthEmZ`kFeuCyeAoRvsAu`A~j@gr@aN{z@st@kZ{cB}_A|aCxu@pnBwQf}@ooBhp@ofAxjAm\\jz@|pB{Kx`CdfC}q@|hBudC~dAaaB_NeFdmFzpByeAbgAneKm@pwDfiDpfEfkBhCfrCxqHvrA_fBbjAnaAddBowD_Lw_C~_Am{BjCoqFitArVggAe|Fxk@sqAeu@{~Cr\\g{ApxAewBzyB`]|[nyC|lBkp@prCtjDcIjuDgaCePitApuE~oAztAfdBrqGh`@oyCdc@oaA|eAre@hwAb}KijAfbEndAbjAsWfaKweBlsEseCbPmZh`F~bAxlDmaBzcBfaCthEfjAdpExQdcDzjBl`Alj@btCuq@dkAhwArbGi`@toHsOjzBfzAtt@kXdmFapAnaAodAsVaeB~eBoEt~Bbk@r{Cwa@liClaBzi@hwAv_CbpAhlGhjApkIoEvkDqyAzoCkgAfjBiu@}LdAiyBan@ylDy{@l`A}h@lE}NhjBdoBhcEiKdaBg{@~~BwrAiU_jJlpLy{F|gA{cN}vAefR{{D}jJs{C_fGazF{qIdeI_fIbP}`Gk_A_qF{pC{rJaaJcbPakFyjCsqG{nJxv@mdJoyCoeHcyAc|BeoEmiFuIwoEvg@{`KooGynN}`UiqDwX_fGelLc^sqGmjN_tHqyLkjLI\\wGuHMM?AiqAgzA_bCvnTu{F`mQ~J|dBqIjb@}p@d_@qoBdaEnaBrnBsj@rjDzbBrlCsqDprLr~AruE`KdmNhSrQkgG|_[euGfkGe|H|aOtgEt`H`aFb}KuRpsQ{]x`IyeChxHb_DjfDt`@vfF{aNduCyfBdcJuxA|nDft@~lEai@|wFbfEijBzkEf|Fm~AliIfQfzGqyD~jFytBihCucAbPzd@|_DasGdmFedDb{@sqA|}DgtIzxKqmCkfD{xEjkHaiBwXahGdxSrrAh_LakPnaA{sAslCyhBr{C{lCcwBg`FwmIkoEdPo{HycMweMk_A_gAwv@ey@fxH|E|_Dgr@b`EitDp~GxtAbyAeChhCqxCbjAokFr_NcmDpnBu|B_Nc`@pdFwrHtqGuxJfsDsnJchBe}C_wA_lAdn@yjDuaBgRwfFw~BqGkqAl{BedCk_AqHm{Bi|A}gAub@waB{zAa_KqhBzK{~DadCo^qfEprAihCeiBo~GwnGhlMklLssFc{@x{DczD|i@su@fdDzTjjNmaDdmFw`GlyCm|J{lPyEvrMciRjqKjUvmO{jJre@oqCdeIc}BqpAln@wnCmn@g{A_yBj_A}nAe_@qmA_vGlp@qbAmqBmoA{nAlr@{eB`N{eB}gA{MnfE{d@cAm_@dmFm_CvIw\\`jAuwC{aCrWnjIsn@`xAvnA`kIef@`qAkcCk}AsjAzpCqcAlk@`@bUwzAaNkyA~gAqhC}mJdaEmsE_nCglAeiEuqGyMw_CctFerJexBawMatBrbGzt@p_BlLduCq`BtaBycGd_@cQ}eBofB~hA}cF_cIc_JkjHmT_fB_iCc~EayCf}@gs@wXaWbyAqyIcjAwgJ`l@opBjfDotE~qCkx@zaCugBflA}~AviEsoAhCwtEctCc~Br|NmfF~y@e|@e|@ieBteFkBf}FisAfn@igBkpFoc@fRmy@cPoYloAunAe_@qpApwD}gA|[ceBumCvd@}}Ds~@efCc^miCsyB_aDb_B}fGbb@ecJcyAiC{RztAeZxh@k~A`l@oY`iA}HxtAqKb|@km@m`AcXip@fNor@ah@wzDh`BubG`b@dP|Jvu@tp@}fA`j@omB{RupBfJctCkk@waBhq@mvDb}Awg@|Bu`Hx_BehBzVoyCwgBgRsz@~tBucBut@z_Ag_Lhy@g{AueEo_M_GurAgdEkgX|cBsdFpUsGwjDglJuh@ut@csCsWy{@oeEiwBhRi@hyBqj@lEwgEteLys@vmIgkBbAckBwv@mr@q~GejAwXcm@k_Ac`Cal@iBcdOoeAerDuyCkq@ewA}_Dyi@uH{]axG}oDmxCyfBqs@uTs}B`PgxBggAgnFkrArgBeNzNcNbq@oaBrcAqyA`N}rKuqGqkG~gAsRbwBeiDxlDuzE~tBldEzyEaaBr`Sis@lTqEhlMg{Dv{O}`Fse@wfCr}BkgBePjZakF}kA{i@wJ}pC{zBboEmhDal@kt@p_BceC_uB_dAugK}BoiUxkA}hFkt@{wFvoA{gLoi_@qnBe`EwnCi|A`l@gwPuuQmsKgsDitRnaAs_BfuCgjMakFy_U~tB_h@lgU}bA~pOqm_@j`RedJnyq@{eLd|FomCpnBeceB{dgF?A}xiB{hnA
       """)
   }
   
@@ -176,7 +176,7 @@ class ASPolygonKitTests: XCTestCase {
       XCTAssertEqual(1, merged.count)
       
       XCTAssertEqual(merged.first?.encodeCoordinates(), """
-        _aisJ~nyo@?_oyo@~nh\\??`f{@nyo@lblH~tAboL~|bKs_kN?nh\\npxD??ovmHnxtI??~s`BnnqC??~m|Qn}}B??~hsXoezG??_ry@_ulL??_ulLo{vA??~dtBoljB??~{|FkkmCrkt@zoJz|x@i_@vaAxzbCgjiAnfrB??~qy@ntfG??ppHnaoA|z`BnpxDnl{U?~hbE_c{X??cro[_msCznqH?fdS
+        _aisJ~nyo@?_oyo@~nh\\??`f{@nyo@lblH~tAboL~|bKs_kN?nh\\npxD??ovmHnxtI??~s`BnnqC??~m|Qn}}B??~hsXoezG??_ry@_ulL??_ulLo{vA??~dtBoljB??~{|FkkmCrkt@zoJz|x@i_@vaAxzbCgjiAnfrB??~qy@ntfG??ppHnaoA|z`BnpxDnl{U?~hbE_c{X??cro[_msCznqH?fdS_oh\\?
         """)
     }
   }
@@ -186,7 +186,7 @@ class ASPolygonKitTests: XCTestCase {
     let addition = Polygon(pairs: [ (5,1), (5,4), (3,4), (3,2), (2,2), (2,4), (0,4), (0,1) ])
     let merged = try grower.union(addition)
     XCTAssertTrue(merged)
-    XCTAssertEqual(12, grower.points.count)
+    XCTAssertEqual(13, grower.points.count)
   }
   
   func testSinglePointFailure() throws {
